@@ -43,12 +43,6 @@ struct RootView: View {
     }
 }
 
-struct HomeView: View {
-    var body: some View {
-        Text("HomeView")
-    }
-}
-
 struct SearchView: View {
     var body: some View {
         Text("SearchView")
