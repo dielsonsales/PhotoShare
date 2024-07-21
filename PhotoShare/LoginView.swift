@@ -47,6 +47,7 @@ struct LoginView: View {
                 Button("Log in") {
                     loginManager.login()
                 }
+                .frame(maxWidth: .infinity)
                 .padding()
                 .foregroundStyle(.white)
                 .background(Color(UIColor(_colorLiteralRed: 0.29, green: 0.77, blue: 1, alpha: 1)))
