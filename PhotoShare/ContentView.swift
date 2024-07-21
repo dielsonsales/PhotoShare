@@ -23,7 +23,7 @@ struct ContentView: View {
 
     var body: some View {
         if loginManager.isLoggedIn {
-            HomeView()
+            RootView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .transition(.opacity)
         } else {
