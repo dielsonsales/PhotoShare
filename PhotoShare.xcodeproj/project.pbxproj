@@ -79,6 +79,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9C968122C4DA4FE00F9005D /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				E9FB0B3B2C4C2DDC007FA4DD /* ContentView.swift */,
+				E9FB0B3D2C4C2DDC007FA4DD /* Item.swift */,
+				E9C968062C4C91BF00F9005D /* LoginManager.swift */,
+				E9C968082C4C92A000F9005D /* LoginView.swift */,
+				E9C9680A2C4C932D00F9005D /* RootView.swift */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
 		E9FB0B2D2C4C2DDB007FA4DD = {
 			isa = PBXGroup;
 			children = (
@@ -102,14 +114,10 @@
 		E9FB0B382C4C2DDC007FA4DD /* PhotoShare */ = {
 			isa = PBXGroup;
 			children = (
+				E9C968122C4DA4FE00F9005D /* presentation */,
 				E9FB0B392C4C2DDC007FA4DD /* PhotoShareApp.swift */,
-				E9FB0B3B2C4C2DDC007FA4DD /* ContentView.swift */,
-				E9FB0B3D2C4C2DDC007FA4DD /* Item.swift */,
 				E9FB0B3F2C4C2DDD007FA4DD /* Assets.xcassets */,
 				E9FB0B412C4C2DDD007FA4DD /* Preview Content */,
-				E9C968062C4C91BF00F9005D /* LoginManager.swift */,
-				E9C968082C4C92A000F9005D /* LoginView.swift */,
-				E9C9680A2C4C932D00F9005D /* RootView.swift */,
 			);
 			path = PhotoShare;
 			sourceTree = "<group>";
