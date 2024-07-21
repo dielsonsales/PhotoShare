@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9C968072C4C91BF00F9005D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C968062C4C91BF00F9005D /* LoginManager.swift */; };
+		E9C968092C4C92A000F9005D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C968082C4C92A000F9005D /* LoginView.swift */; };
+		E9C9680B2C4C932D00F9005D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9680A2C4C932D00F9005D /* HomeView.swift */; };
 		E9FB0B3A2C4C2DDC007FA4DD /* PhotoShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FB0B392C4C2DDC007FA4DD /* PhotoShareApp.swift */; };
 		E9FB0B3C2C4C2DDC007FA4DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FB0B3B2C4C2DDC007FA4DD /* ContentView.swift */; };
 		E9FB0B3E2C4C2DDC007FA4DD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FB0B3D2C4C2DDC007FA4DD /* Item.swift */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9C968062C4C91BF00F9005D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		E9C968082C4C92A000F9005D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E9C9680A2C4C932D00F9005D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E9FB0B362C4C2DDC007FA4DD /* PhotoShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FB0B392C4C2DDC007FA4DD /* PhotoShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShareApp.swift; sourceTree = "<group>"; };
 		E9FB0B3B2C4C2DDC007FA4DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,6 +107,9 @@
 				E9FB0B3D2C4C2DDC007FA4DD /* Item.swift */,
 				E9FB0B3F2C4C2DDD007FA4DD /* Assets.xcassets */,
 				E9FB0B412C4C2DDD007FA4DD /* Preview Content */,
+				E9C968062C4C91BF00F9005D /* LoginManager.swift */,
+				E9C968082C4C92A000F9005D /* LoginView.swift */,
+				E9C9680A2C4C932D00F9005D /* HomeView.swift */,
 			);
 			path = PhotoShare;
 			sourceTree = "<group>";
@@ -261,7 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9FB0B3C2C4C2DDC007FA4DD /* ContentView.swift in Sources */,
+				E9C968072C4C91BF00F9005D /* LoginManager.swift in Sources */,
 				E9FB0B3E2C4C2DDC007FA4DD /* Item.swift in Sources */,
+				E9C9680B2C4C932D00F9005D /* HomeView.swift in Sources */,
+				E9C968092C4C92A000F9005D /* LoginView.swift in Sources */,
 				E9FB0B3A2C4C2DDC007FA4DD /* PhotoShareApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
