@@ -43,12 +43,6 @@ struct RootView: View {
     }
 }
 
-struct SearchView: View {
-    var body: some View {
-        Text("SearchView")
-    }
-}
-
 struct AddContentView: View {
     var body: some View {
         Text("AddContentView")

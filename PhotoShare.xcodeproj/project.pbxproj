@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E94231AC2C4DEDBF00C6E876 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94231AB2C4DEDBF00C6E876 /* SearchView.swift */; };
 		E9C968072C4C91BF00F9005D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C968062C4C91BF00F9005D /* LoginManager.swift */; };
 		E9C968092C4C92A000F9005D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C968082C4C92A000F9005D /* LoginView.swift */; };
 		E9C9680B2C4C932D00F9005D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9680A2C4C932D00F9005D /* RootView.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E94231AB2C4DEDBF00C6E876 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		E9C968062C4C91BF00F9005D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		E9C968082C4C92A000F9005D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E9C9680A2C4C932D00F9005D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				E9C968062C4C91BF00F9005D /* LoginManager.swift */,
 				E9C968082C4C92A000F9005D /* LoginView.swift */,
 				E9C9680A2C4C932D00F9005D /* RootView.swift */,
+				E94231AB2C4DEDBF00C6E876 /* SearchView.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9FB0B3C2C4C2DDC007FA4DD /* ContentView.swift in Sources */,
+				E94231AC2C4DEDBF00C6E876 /* SearchView.swift in Sources */,
 				E9C968072C4C91BF00F9005D /* LoginManager.swift in Sources */,
 				E9FB0B3E2C4C2DDC007FA4DD /* Item.swift in Sources */,
 				E9C968142C4DA74800F9005D /* HomePost.swift in Sources */,
