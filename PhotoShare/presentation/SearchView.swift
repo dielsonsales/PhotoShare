@@ -18,10 +18,12 @@ import SwiftUI
 
 struct SearchItem: Codable, Hashable, Identifiable {
     let id: String
+    let imageURL: String
     let description: String
 
     init(description: String) {
         id = UUID().uuidString
+        self.imageURL = ""
         self.description = description
     }
 }
@@ -53,15 +55,31 @@ struct SearchView: View {
     @StateObject var viewModel = SearchItemViewModel()
 
     var body: some View {
-        NavigationStack {
-            List {
-                ForEach(viewModel.filteredItems, id: \.self) { searchItem in
-                    Text(searchItem.description)
+        GeometryReader { geometry in
+            let gridSize = geometry.size.width / 2 - 10
+            let gridColumns = [
+                GridItem(.fixed(gridSize), spacing: 5, alignment: .leading),
+                GridItem(.fixed(gridSize), spacing: 5, alignment: .leading)
+            ]
+            VStack {
+                HStack(alignment: .center) {
+                    Image(systemName: "magnifyingglass")
+                    TextField("Search", text: $viewModel.searchText)
+                }
+                .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
+                .background(Color(UIColor.secondarySystemBackground))
+                .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 0.5))
+                .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
+                ScrollView {
+                    LazyVGrid(columns: gridColumns, spacing: 5) {
+                        ForEach(0..<9) { item in
+                            Rectangle()
+                                .fill(Color.blue)
+                                .frame(height: gridSize, alignment: .top)
+                        }
+                    }
                 }
             }
-            .listStyle(.plain)
-            .searchable(text: $viewModel.searchText)
-            .navigationTitle("Test")
         }
     }
 }
