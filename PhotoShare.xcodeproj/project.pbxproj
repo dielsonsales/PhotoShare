@@ -85,6 +85,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E93244942C4EC6D400FA6484 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E9C968062C4C91BF00F9005D /* LoginManager.swift */,
+				E9C968082C4C92A000F9005D /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		E9C968122C4DA4FE00F9005D /* presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,8 +101,7 @@
 				E9C968132C4DA74800F9005D /* HomePost.swift */,
 				E9C968152C4DA86800F9005D /* HomeView.swift */,
 				E9FB0B3D2C4C2DDC007FA4DD /* Item.swift */,
-				E9C968062C4C91BF00F9005D /* LoginManager.swift */,
-				E9C968082C4C92A000F9005D /* LoginView.swift */,
+				E93244942C4EC6D400FA6484 /* Login */,
 				E9C9680A2C4C932D00F9005D /* RootView.swift */,
 				E94231AB2C4DEDBF00C6E876 /* SearchView.swift */,
 			);
