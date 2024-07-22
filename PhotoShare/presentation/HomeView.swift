@@ -24,6 +24,10 @@ struct HomeView: View {
                 PostItem()
                 PostItem()
             }
+            .padding(EdgeInsets(top: -8, leading: 0, bottom: -8, trailing: 0))
+            Rectangle()
+                .frame(height: 0.5)
+                .foregroundStyle(Color(UIColor.secondaryLabel))
         }
     }
 }
