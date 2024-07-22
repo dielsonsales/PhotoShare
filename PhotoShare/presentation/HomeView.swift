@@ -59,15 +59,35 @@ struct PostItem: View {
             }
             .frame(minWidth: nil, maxWidth: .infinity, minHeight: 400, maxHeight: 400)
             HStack {
-                Image(systemName: "heart")
-                    .imageScale(.large)
-                Image(systemName: "message")
-                    .imageScale(.large)
-                Image(systemName: "paperplane")
-                    .imageScale(.large)
+                Button(action: {
+                    // TODO:
+                }, label: {
+                    Image(systemName: "heart")
+                        .imageScale(.large)
+                        .foregroundStyle(.black)
+                })
+                Button(action: {
+                    // TODO:
+                }, label: {
+                    Image(systemName: "message")
+                        .imageScale(.large)
+                        .foregroundStyle(.black)
+                })
+                Button(action: {
+                    // TODO:
+                }, label: {
+                    Image(systemName: "paperplane")
+                        .imageScale(.large)
+                        .foregroundStyle(.black)
+                })
                 Spacer()
-                Image(systemName: "star")
-                    .imageScale(.large)
+                Button(action: {
+                    // TODO:
+                }, label: {
+                    Image(systemName: "star")
+                        .imageScale(.large)
+                        .foregroundStyle(.black)
+                })
             }
             .padding(EdgeInsets(top: 1, leading: 8, bottom: 8, trailing: 8))
         }
