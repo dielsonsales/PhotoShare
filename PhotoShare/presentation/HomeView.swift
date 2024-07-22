@@ -40,7 +40,7 @@ struct PostItem: View {
                     .fill(Color.blue)
                     .background(Color.blue)
                     .frame(width: 30, height: 30)
-                    .cornerRadius(10)
+                    .cornerRadius(15)
                     .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
                 VStack(alignment: .leading) {
                     Text("retrocomputers")
@@ -50,9 +50,10 @@ struct PostItem: View {
                 }
                 Spacer()
                 Image(systemName: "ellipsis")
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
             }
             .frame(maxWidth: .infinity)
-            .padding(EdgeInsets(top: 8, leading: 8, bottom: 0, trailing: 8))
+            .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
             ZStack {
                 Rectangle()
                     .fill(Color.blue)
@@ -91,7 +92,6 @@ struct PostItem: View {
             }
             .padding(EdgeInsets(top: 1, leading: 8, bottom: 8, trailing: 8))
         }
-        .background(Color.red)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
     }
