@@ -28,6 +28,45 @@ struct SearchItem: Codable, Hashable, Identifiable {
     }
 }
 
+struct SearchItemDefaultCell: View {
+    let itemSize: CGFloat
+    init(itemSize: CGFloat) {
+        self.itemSize = itemSize
+    }
+    var body: some View {
+        HStack(alignment: .top, spacing: 8) {
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: itemSize, height: itemSize)
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: itemSize, height: itemSize)
+        }
+    }
+}
+
+struct SearchItemDoubleCell: View {
+    let itemSize: CGFloat
+    init(itemSize: CGFloat) {
+        self.itemSize = itemSize
+    }
+    var body: some View {
+        HStack(alignment: .top, spacing: 8) {
+            VStack(spacing: 8) {
+                Rectangle()
+                    .fill(Color.blue)
+                    .frame(width: itemSize, height: itemSize)
+                Rectangle()
+                    .fill(Color.blue)
+                    .frame(width: itemSize, height: itemSize)
+            }
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: itemSize, height: itemSize * 2 + 8)
+        }
+    }
+}
+
 final class SearchItemViewModel: ObservableObject {
     @Published var searchItems = [SearchItem]()
     @Published var searchText = ""
@@ -56,11 +95,7 @@ struct SearchView: View {
 
     var body: some View {
         GeometryReader { geometry in
-            let gridSize = geometry.size.width / 2 - 10
-            let gridColumns = [
-                GridItem(.fixed(gridSize), spacing: 5, alignment: .leading),
-                GridItem(.fixed(gridSize), spacing: 5, alignment: .leading)
-            ]
+            let gridSize = (geometry.size.width - 4 * 8) / 3
             VStack {
                 HStack(alignment: .center) {
                     Image(systemName: "magnifyingglass")
@@ -71,13 +106,21 @@ struct SearchView: View {
                 .overlay(RoundedRectangle(cornerRadius: 5).stroke(.gray, lineWidth: 0.5))
                 .padding(EdgeInsets(top: 2, leading: 8, bottom: 2, trailing: 8))
                 ScrollView {
-                    LazyVGrid(columns: gridColumns, spacing: 5) {
+                    SearchLayout {
                         ForEach(0..<9) { item in
-                            Rectangle()
-                                .fill(Color.blue)
-                                .frame(height: gridSize, alignment: .top)
+                            if item % 3 == 0 {
+                                Rectangle()
+                                    .fill(Color.blue)
+                                    .frame(width: gridSize, height: gridSize * 2 + 8)
+                            } else {
+                                Rectangle()
+                                    .fill(Color.blue)
+                                    .frame(width: gridSize, height: gridSize)
+                            }
+
                         }
                     }
+                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                 }
             }
         }
