@@ -9,14 +9,14 @@ import SwiftUI
 
 // Based on https://github.com/apptekstudios/SwiftUILayouts/blob/main/Sources/SwiftUILayouts/VerticalWaterfallLayout.swift
 struct SearchLayout: Layout {
-    var columns: Int
+    var columnsCount: Int
     var spacingX: Double
     var spacingY: Double
 
-    public init(columns: Int = 3, spacingX: Double = 8, spacingY: Double = 8) {
-        self.columns = columns
+    public init(spacingX: Double = 8, spacingY: Double = 8, columns: Int = 3) {
         self.spacingX = spacingX
         self.spacingY = spacingY
+        self.columnsCount = columns
     }
 
     public struct LayoutCache {
@@ -56,7 +56,7 @@ struct SearchLayout: Layout {
     }
 
     public func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout LayoutCache?) {
-        let calc = cache?.ifValidForParams(proposal.replacingUnspecifiedDimensions().width, columns: columns) ?? layout(subviews: subviews, containerWidth: bounds.width)
+        let calc = cache?.ifValidForParams(proposal.replacingUnspecifiedDimensions().width, columns: columnsCount) ?? layout(subviews: subviews, containerWidth: bounds.width)
         for (index, subview) in zip(subviews.indices, subviews) {
             if let value: SearchLayout.CacheItem = calc.items[index] {
                 subview.place(
@@ -69,11 +69,11 @@ struct SearchLayout: Layout {
 
     func layout(subviews: Subviews, containerWidth: CGFloat) -> LayoutCache {
         guard containerWidth != 0 else  {
-            return LayoutCache(targetContainerWidth: 0, columnCount: columns)
+            return LayoutCache(targetContainerWidth: 0, columnCount: columnsCount)
         }
-        var result: LayoutCache = .init(targetContainerWidth: containerWidth, columnCount: columns)
-        let columnWidth = (containerWidth - Double(columns - 1) * spacingX) / Double(columns)
-        var columns: [Column] = .init(repeating: Column(width: columnWidth), count: columns)
+        var result: LayoutCache = .init(targetContainerWidth: containerWidth, columnCount: columnsCount)
+        let columnWidth = (containerWidth - Double(columnsCount - 1) * spacingX) / Double(columnsCount)
+        var columns: [Column] = .init(repeating: Column(width: columnWidth), count: columnsCount)
         for (index, subview) in zip(subviews.indices, subviews) {
             let size = subview.sizeThatFits(.init(width: columnWidth, height: nil))
             let smallestColumnIndex = zip(columns, columns.indices).min(by: { $0.0.height < $1.0.height })?.1 ?? 0
