@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-// Based on https://github.com/apptekstudios/SwiftUILayouts/blob/main/Sources/SwiftUILayouts/VerticalWaterfallLayout.swift
+// Ref: https://github.com/apptekstudios/SwiftUILayouts/blob/main/Sources/SwiftUILayouts/VerticalWaterfallLayout.swift
 struct SearchLayout: Layout {
 
     struct Column {
@@ -39,8 +39,6 @@ struct SearchLayout: Layout {
             return self
         }
     }
-
-
 
     // MARK: - Layout method
 
@@ -75,8 +73,9 @@ struct SearchLayout: Layout {
 
     // MARK: - Private methods
 
+    // swiftlint:disable identifier_name
     private func layout(subviews: Subviews, containerWidth: CGFloat) -> LayoutCache {
-        guard containerWidth != 0 else  {
+        guard containerWidth != 0 else {
             return LayoutCache(targetContainerWidth: 0, columnCount: columnsCount)
         }
         var result = LayoutCache(targetContainerWidth: containerWidth, columnCount: columnsCount)
@@ -102,4 +101,5 @@ struct SearchLayout: Layout {
         })
         return result
     }
+    // swiftlint:enable identifier_name
 }

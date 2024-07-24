@@ -82,10 +82,10 @@ final class SearchItemViewModel: ObservableObject {
     }
 
     init() {
-        var i = 0
-        while i < 20 {
-            searchItems.append(SearchItem(description: "Test \(i)"))
-            i += 1
+        var index = 0
+        while index < 20 {
+            searchItems.append(SearchItem(description: "Test \(index)"))
+            index += 1
         }
     }
 }
