@@ -10,10 +10,10 @@ import SwiftUI
 // Based on https://github.com/apptekstudios/SwiftUILayouts/blob/main/Sources/SwiftUILayouts/VerticalWaterfallLayout.swift
 struct SearchLayout: Layout {
     var columnsCount: Int
-    var spacingX: Double
-    var spacingY: Double
+    var spacingX: CGFloat
+    var spacingY: CGFloat
 
-    public init(spacingX: Double = 8, spacingY: Double = 8, columns: Int = 3) {
+    public init(spacingX: CGFloat = 8, spacingY: CGFloat = 8, columns: Int = 3) {
         self.spacingX = spacingX
         self.spacingY = spacingY
         self.columnsCount = columns
@@ -34,8 +34,8 @@ struct SearchLayout: Layout {
     }
 
     struct Column {
-        var height: Double = 0
-        var width: Double = 0
+        var height: CGFloat = 0
+        var width: CGFloat = 0
         var items: [Int: CacheItem] = [:]
     }
 
@@ -72,7 +72,7 @@ struct SearchLayout: Layout {
             return LayoutCache(targetContainerWidth: 0, columnCount: columnsCount)
         }
         var result: LayoutCache = .init(targetContainerWidth: containerWidth, columnCount: columnsCount)
-        let columnWidth = (containerWidth - Double(columnsCount - 1) * spacingX) / Double(columnsCount)
+        let columnWidth: CGFloat = (containerWidth - CGFloat(columnsCount - 1) * spacingX) / CGFloat(columnsCount)
         var columns: [Column] = .init(repeating: Column(width: columnWidth), count: columnsCount)
         for (index, subview) in zip(subviews.indices, subviews) {
             let size = subview.sizeThatFits(.init(width: columnWidth, height: nil))
@@ -81,16 +81,16 @@ struct SearchLayout: Layout {
                 get { columns[smallestColumnIndex] }
                 set { columns[smallestColumnIndex] = newValue }
             }
-            let x = (columnWidth + spacingX) * Double(smallestColumnIndex)
-            let y = currentColumn.height + spacingY
+            let x: CGFloat = (columnWidth + spacingX) * CGFloat(smallestColumnIndex)
+            let y: CGFloat = currentColumn.height + spacingY
             let item = CacheItem(position: CGPoint(x: x, y: y), size: size)
             currentColumn.items[index] = item
             currentColumn.height = currentColumn.height + spacingY + item.size.height
         }
-        let maxHeight = columns.max(by: { $0.height < $1.height })?.height ?? .zero
+        let maxHeight: CGFloat = columns.max(by: { $0.height < $1.height })?.height ?? .zero
         result.size = CGSize(width: containerWidth, height: maxHeight)
         result.items = columns.reduce(into: [Int: CacheItem](), { partialResult, line in
-            partialResult.merge(line.items, uniquingKeysWith: {$1})
+            partialResult.merge(line.items, uniquingKeysWith: { $1 })
         })
         return result
     }
