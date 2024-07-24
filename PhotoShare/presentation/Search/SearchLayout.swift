@@ -33,9 +33,9 @@ struct SearchLayout: Layout {
         var size: CGSize = .zero
 
         func ifValidForParams(_ width: CGFloat, columns: Int) -> Self? {
-            guard targetContainerWidth == width,
-                    columnCount == columns
-            else { return nil }
+            guard targetContainerWidth == width, columnCount == columns else {
+                return nil
+            }
             return self
         }
     }
