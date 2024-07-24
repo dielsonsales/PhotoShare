@@ -10,6 +10,12 @@ import SwiftUI
 // Based on https://github.com/apptekstudios/SwiftUILayouts/blob/main/Sources/SwiftUILayouts/VerticalWaterfallLayout.swift
 struct SearchLayout: Layout {
 
+    struct Column {
+        var height: CGFloat = 0
+        var width: CGFloat = 0
+        var items: [Int: CGRect] = [:]
+    }
+
     var columnsCount: Int
     var spacingX: CGFloat
     var spacingY: CGFloat
@@ -34,11 +40,9 @@ struct SearchLayout: Layout {
         }
     }
 
-    struct Column {
-        var height: CGFloat = 0
-        var width: CGFloat = 0
-        var items: [Int: CGRect] = [:]
-    }
+
+
+    // MARK: - Layout method
 
     public func makeCache(subviews: Subviews) -> LayoutCache? {
         return nil
@@ -51,8 +55,14 @@ struct SearchLayout: Layout {
         return calc.size
     }
 
-    public func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout LayoutCache?) {
-        let calc = cache?.ifValidForParams(proposal.replacingUnspecifiedDimensions().width, columns: columnsCount) ?? layout(subviews: subviews, containerWidth: bounds.width)
+    public func placeSubviews(
+        in bounds: CGRect,
+        proposal: ProposedViewSize,
+        subviews: Subviews,
+        cache: inout LayoutCache?
+    ) {
+        let calc = cache?.ifValidForParams(proposal.replacingUnspecifiedDimensions().width, columns: columnsCount) ??
+            layout(subviews: subviews, containerWidth: bounds.width)
         for (index, subview) in zip(subviews.indices, subviews) {
             if let value: CGRect = calc.items[index] {
                 subview.place(
@@ -63,7 +73,9 @@ struct SearchLayout: Layout {
         }
     }
 
-    func layout(subviews: Subviews, containerWidth: CGFloat) -> LayoutCache {
+    // MARK: - Private methods
+
+    private func layout(subviews: Subviews, containerWidth: CGFloat) -> LayoutCache {
         guard containerWidth != 0 else  {
             return LayoutCache(targetContainerWidth: 0, columnCount: columnsCount)
         }
