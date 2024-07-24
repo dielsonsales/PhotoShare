@@ -9,6 +9,7 @@ import SwiftUI
 
 // Based on https://github.com/apptekstudios/SwiftUILayouts/blob/main/Sources/SwiftUILayouts/VerticalWaterfallLayout.swift
 struct SearchLayout: Layout {
+
     var columnsCount: Int
     var spacingX: CGFloat
     var spacingY: CGFloat
@@ -20,12 +21,12 @@ struct SearchLayout: Layout {
     }
 
     public struct LayoutCache {
-        var targetContainerWidth: Double // invalidates cache on change
+        var targetContainerWidth: CGFloat // invalidates cache on change
         var columnCount: Int // invalidates cache on change
-        var items: [Int: CacheItem] = [:]
+        var items: [Int: CGRect] = [:]
         var size: CGSize = .zero
 
-        func ifValidForParams(_ width: Double, columns: Int) -> Self? {
+        func ifValidForParams(_ width: CGFloat, columns: Int) -> Self? {
             guard targetContainerWidth == width,
                     columnCount == columns
             else { return nil }
@@ -36,12 +37,7 @@ struct SearchLayout: Layout {
     struct Column {
         var height: CGFloat = 0
         var width: CGFloat = 0
-        var items: [Int: CacheItem] = [:]
-    }
-
-    struct CacheItem {
-        var position: CGPoint
-        var size: CGSize
+        var items: [Int: CGRect] = [:]
     }
 
     public func makeCache(subviews: Subviews) -> LayoutCache? {
@@ -58,9 +54,9 @@ struct SearchLayout: Layout {
     public func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout LayoutCache?) {
         let calc = cache?.ifValidForParams(proposal.replacingUnspecifiedDimensions().width, columns: columnsCount) ?? layout(subviews: subviews, containerWidth: bounds.width)
         for (index, subview) in zip(subviews.indices, subviews) {
-            if let value: SearchLayout.CacheItem = calc.items[index] {
+            if let value: CGRect = calc.items[index] {
                 subview.place(
-                    at: CGPoint.pointByAdding(bounds.origin, to: value.position),
+                    at: CGPoint.pointByAdding(bounds.origin, to: value.origin),
                     proposal: .init(value.size)
                 )
             }
@@ -71,7 +67,7 @@ struct SearchLayout: Layout {
         guard containerWidth != 0 else  {
             return LayoutCache(targetContainerWidth: 0, columnCount: columnsCount)
         }
-        var result: LayoutCache = .init(targetContainerWidth: containerWidth, columnCount: columnsCount)
+        var result = LayoutCache(targetContainerWidth: containerWidth, columnCount: columnsCount)
         let columnWidth: CGFloat = (containerWidth - CGFloat(columnsCount - 1) * spacingX) / CGFloat(columnsCount)
         var columns: [Column] = .init(repeating: Column(width: columnWidth), count: columnsCount)
         for (index, subview) in zip(subviews.indices, subviews) {
@@ -83,13 +79,13 @@ struct SearchLayout: Layout {
             }
             let x: CGFloat = (columnWidth + spacingX) * CGFloat(smallestColumnIndex)
             let y: CGFloat = currentColumn.height + spacingY
-            let item = CacheItem(position: CGPoint(x: x, y: y), size: size)
+            let item = CGRect(x: x, y: y, width: size.width, height: size.height)
             currentColumn.items[index] = item
             currentColumn.height = currentColumn.height + spacingY + item.size.height
         }
         let maxHeight: CGFloat = columns.max(by: { $0.height < $1.height })?.height ?? .zero
         result.size = CGSize(width: containerWidth, height: maxHeight)
-        result.items = columns.reduce(into: [Int: CacheItem](), { partialResult, line in
+        result.items = columns.reduce(into: [Int: CGRect](), { partialResult, line in
             partialResult.merge(line.items, uniquingKeysWith: { $1 })
         })
         return result
