@@ -35,7 +35,7 @@ struct RootView: View {
                 .tabItem {
                     Image(systemName: "movieclapper")
                 }
-            AccountView()
+            ProfileView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                 }
@@ -52,11 +52,5 @@ struct AddContentView: View {
 struct StoriesView: View {
     var body: some View {
         Text("StoriesView")
-    }
-}
-
-struct AccountView: View {
-    var body: some View {
-        Text("AccountView")
     }
 }
