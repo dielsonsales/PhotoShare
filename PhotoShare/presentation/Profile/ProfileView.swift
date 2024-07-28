@@ -51,44 +51,13 @@ struct ProfileView: View {
                             .font(.subheadline)
                             .lineLimit(1)
                     }
-
                 }
                 HStack(alignment: .center) {
                     Text("Learning to survive anxiety")
                         .font(.callout)
                     Spacer()
                 }
-                HStack(alignment: .center, spacing: 8) {
-                    Button("Edit Profile") { }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color(UIColor.secondarySystemBackground))
-                        .foregroundStyle(.black)
-                        .cornerRadius(8)
-                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                    Button("Share Profile") { }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .background(Color(UIColor.secondarySystemBackground))
-                        .foregroundStyle(.black)
-                        .cornerRadius(8)
-                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                    Button(action: {
-
-                    }, label: {
-                        Image(systemName: "person.badge.plus")
-                            .imageScale(.medium)
-                            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-
-                    })
-                    .frame(maxHeight: .infinity)
-                    .background(Color(UIColor.secondarySystemBackground))
-                    .foregroundStyle(.black)
-                    .cornerRadius(8)
-                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
-                }
-                .frame(height: 54)
-                .frame(maxWidth: .infinity)
-//                .background(Color.red)
+                profileButtons
             }
         }
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
@@ -115,6 +84,39 @@ struct ProfileView: View {
             })
             .foregroundStyle(.black)
         }
+    }
+
+    var profileButtons: some View {
+        HStack(alignment: .center, spacing: 8) {
+            Button("Edit Profile") { }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color(UIColor.secondarySystemBackground))
+                .foregroundStyle(.black)
+                .cornerRadius(8)
+                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+            Button("Share Profile") { }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .background(Color(UIColor.secondarySystemBackground))
+                .foregroundStyle(.black)
+                .cornerRadius(8)
+                .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+            Button(action: {
+                // TODO:
+            }, label: {
+                Image(systemName: "person.badge.plus")
+                    .imageScale(.medium)
+                    .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+
+            })
+            .frame(maxHeight: .infinity)
+            .background(Color(UIColor.secondarySystemBackground))
+            .foregroundStyle(.black)
+            .cornerRadius(8)
+            .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+
+        }
+        .frame(height: 54)
+        .frame(maxWidth: .infinity)
     }
 }
 
