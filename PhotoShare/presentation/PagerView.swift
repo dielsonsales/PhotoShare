@@ -18,7 +18,7 @@ import SwiftUI
 
 struct PagerView: View {
     @State private var selectedIndex = 0
-    let icons: [String]
+    let items: [String]
 
     var body: some View {
         GeometryReader { geometry in
@@ -27,14 +27,14 @@ struct PagerView: View {
                 // Tab bar
                 let padding = gridSize / 2
                 HStack {
-                    ForEach(0..<icons.count, id: \.self) { index in
+                    ForEach(0..<items.count, id: \.self) { index in
                         Button(action: {
                             selectedIndex = index
                         }, label: {
-                            Image(systemName: icons[index])
+                            Image(systemName: items[index])
                                 .imageScale(.large)
                                 .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                            if index < icons.count - 1 {
+                            if index < items.count - 1 {
                                 Spacer()
                             }
                         })
@@ -44,7 +44,7 @@ struct PagerView: View {
                 .padding(EdgeInsets(top: 0, leading: padding, bottom: 0, trailing: padding))
                 // Content view
                 TabView(selection: $selectedIndex) {
-                    ForEach(0..<icons.count, id: \.self) { index in
+                    ForEach(0..<items.count, id: \.self) { index in
                         Rectangle()
                             .fill(index == 0 ? Color.blue: Color.yellow)
                             .tag(index)
@@ -63,7 +63,7 @@ struct PagerView: View {
             "video.bubble",
             "tag"
         ]
-        PagerView(icons: icons)
+        PagerView(items: icons)
             .modelContainer(for: Item.self, inMemory: true)
     }
 }
