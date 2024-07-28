@@ -122,6 +122,7 @@
 		E995B2EE2C51619500209AA6 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				E94E52792C569C4D008D1978 /* PagerView.swift */,
 				E995B2EF2C51620400209AA6 /* ProfileView.swift */,
 			);
 			path = Profile;
@@ -139,7 +140,6 @@
 				E93244942C4EC6D400FA6484 /* Login */,
 				E995B2EE2C51619500209AA6 /* Profile */,
 				E91EB8892C4FEC070020E3D2 /* Search */,
-				E94E52792C569C4D008D1978 /* PagerView.swift */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
