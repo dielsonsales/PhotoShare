@@ -58,6 +58,37 @@ struct ProfileView: View {
                     Spacer()
                 }
                 profileButtons
+                HStack {
+                    Button(action: {
+                        // TODO:
+                    }, label: {
+                        Image(systemName: "squareshape.split.3x3")
+                            .imageScale(.large)
+                    })
+                    .frame(maxHeight: .infinity)
+                    .foregroundStyle(.black)
+                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                    Spacer()
+                    Button(action: {
+                        // TODO:
+                    }, label: {
+                        Image(systemName: "video.bubble")
+                            .imageScale(.large)
+                    })
+                    .frame(maxHeight: .infinity)
+                    .foregroundStyle(.black)
+                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                    Spacer()
+                    Button(action: {
+                        // TODO:
+                    }, label: {
+                        Image(systemName: "tag")
+                            .imageScale(.large)
+                    })
+                    .frame(maxHeight: .infinity)
+                    .foregroundStyle(.black)
+                    .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
+                }
             }
         }
         .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
