@@ -18,101 +18,58 @@ import SwiftUI
 
 struct ProfileView: View {
     var body: some View {
-        GeometryReader { geometry in
-            let gridSize = (geometry.size.width - 4 * 8) / 3
-            ScrollView {
-                VStack {
-                    topBar
-                    HStack(alignment: .center, spacing: 16) {
-                        VStack(alignment: .center, spacing: 8) {
-                            Rectangle()
-                                .fill(Color.blue)
-                                .frame(width: 60, height: 60)
-                                .cornerRadius(30)
-                            Text("Dielson Sales")
-                                .font(.callout)
-                        }
-                        Spacer()
-                        VStack(alignment: .center, spacing: 8) {
-                            Text("21")
-                            Text("posts")
-                                .font(.subheadline)
-                                .lineLimit(1)
-                        }
-                        Spacer()
-                        VStack(alignment: .center, spacing: 8) {
-                            Text("75")
-                            Text("followers")
-                                .font(.subheadline)
-                                .lineLimit(1)
-                        }
-                        Spacer()
-                        VStack(alignment: .center, spacing: 8) {
-                            Text("146")
-                            Text("following")
-                                .font(.subheadline)
-                                .lineLimit(1)
-                        }
-                    }
-                    .frame(height: 110, alignment: .center)
-                    HStack(alignment: .center) {
-                        Text("Learning to survive anxiety")
+        ScrollView {
+            VStack {
+                topBar
+                HStack(alignment: .center, spacing: 16) {
+                    VStack(alignment: .center, spacing: 8) {
+                        Rectangle()
+                            .fill(Color.blue)
+                            .frame(width: 60, height: 60)
+                            .cornerRadius(30)
+                        Text("Dielson Sales")
                             .font(.callout)
-                        Spacer()
                     }
-                    .frame(height: 40)
-                    profileButtons
-                    HStack {
-                        let padding = gridSize / 2
-                        Button(action: {
-                            // TODO:
-                        }, label: {
-                            Image(systemName: "squareshape.split.3x3")
-                                .imageScale(.large)
-                        })
-                        .frame(maxHeight: .infinity)
-                        .foregroundStyle(.black)
-                        .padding(EdgeInsets(top: 8, leading: padding, bottom: 8, trailing: 0))
-                        Spacer()
-                        Button(action: {
-                            // TODO:
-                        }, label: {
-                            Image(systemName: "video.bubble")
-                                .imageScale(.large)
-                        })
-                        .frame(maxHeight: .infinity)
-                        .foregroundStyle(.black)
-                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-                        Spacer()
-                        Button(action: {
-                            // TODO:
-                        }, label: {
-                            Image(systemName: "tag")
-                                .imageScale(.large)
-                        })
-                        .frame(maxHeight: .infinity)
-                        .foregroundStyle(.black)
-                        .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: padding))
+                    Spacer()
+                    VStack(alignment: .center, spacing: 8) {
+                        Text("21")
+                        Text("posts")
+                            .font(.subheadline)
+                            .lineLimit(1)
                     }
-                    .frame(height: 40, alignment: .center)
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack(alignment: .top, spacing: 0) {
-                            Rectangle()
-                                .fill(Color.blue)
-                                .frame(width: geometry.size.width - 32)
-                            Rectangle()
-                                .fill(Color.red)
-                                .frame(width: geometry.size.width - 32)
-                            Rectangle()
-                                .fill(Color.brown)
-                                .frame(width: geometry.size.width - 32)
-                        }
-                        .frame(height: 1000)
+                    Spacer()
+                    VStack(alignment: .center, spacing: 8) {
+                        Text("75")
+                        Text("followers")
+                            .font(.subheadline)
+                            .lineLimit(1)
+                    }
+                    Spacer()
+                    VStack(alignment: .center, spacing: 8) {
+                        Text("146")
+                        Text("following")
+                            .font(.subheadline)
+                            .lineLimit(1)
                     }
                 }
+                .frame(height: 110, alignment: .center)
+                HStack(alignment: .center) {
+                    Text("Learning to survive anxiety")
+                        .font(.callout)
+                    Spacer()
+                }
+                .frame(height: 40)
+                profileButtons
+                PagerView(items: [
+                    "squareshape.split.3x3",
+                    "video.bubble",
+                    "tag"
+                ])
+                .frame(height: 700)
             }
-            .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
         }
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+        .scrollIndicators(.hidden)
     }
 
     var topBar: some View {
