@@ -73,27 +73,34 @@ struct ProfileView: View {
     }
 
     var topBar: some View {
-        HStack(alignment: .center, spacing: 8) {
-            Image(systemName: "lock")
-            Text("d.scar.valho")
-                .font(.title2)
-            Spacer()
-            Button(action: {
-                // TODO:
-            }, label: {
-                Image(systemName: "plus.app")
-                    .imageScale(.large)
-            })
-            .foregroundStyle(.black)
-            Button(action: {
-                // TODO:
-            }, label: {
-                Image(systemName: "line.3.horizontal")
-                    .imageScale(.large)
-            })
-            .foregroundStyle(.black)
-        }
-        .frame(height: 40, alignment: .center)
+        let leftView = AnyView(
+            HStack(spacing: 8) {
+                Image(systemName: "lock")
+                Text("d.scar.valho")
+                    .font(.title2)
+            }
+        )
+        let buttons: [AnyView] = [
+            AnyView(
+                Button(action: {
+                    // TODO:
+                }, label: {
+                    Image(systemName: "plus.app")
+                        .imageScale(.large)
+                })
+                .foregroundStyle(.black)
+            ),
+            AnyView(
+                Button(action: {
+                    // TODO:
+                }, label: {
+                    Image(systemName: "line.3.horizontal")
+                        .imageScale(.large)
+                })
+                .foregroundStyle(.black)
+            )
+        ]
+        return TopNavigationPanel(leftView: leftView, buttons: buttons)
     }
 
     var profileButtons: some View {
