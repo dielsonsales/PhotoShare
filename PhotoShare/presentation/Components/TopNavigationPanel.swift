@@ -18,12 +18,23 @@ import SwiftUI
 
 struct TopNavigationPanel: View {
 
-    let leftView: AnyView
+    enum TitleType {
+        case simpleText(text: String)
+        case customView(view: AnyView)
+    }
+
+    let title: TitleType
     let buttons: [AnyView]
 
     var body: some View {
         HStack(alignment: .center, spacing: 16) {
-            leftView
+            switch title {
+            case .simpleText(let text):
+                Text(text)
+                    .font(.title2)
+            case .customView(let view):
+                view
+            }
             Spacer()
             ForEach(0..<buttons.count, id: \.self) { index in
                 buttons[index]

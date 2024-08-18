@@ -18,17 +18,42 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        VStack {
+        VStack(spacing: 8) {
+            TopNavigationPanel(
+                title: .simpleText(text: "Photo Share"),
+                buttons: [
+                    AnyView(
+                        Button(action: {
+                            // TODO:
+                        }, label: {
+                            Image(systemName: "heart")
+                                .imageScale(.large)
+                        })
+                        .foregroundStyle(.black)
+                    ),
+                    AnyView(
+                        Button(action: {
+                            // TODO:
+                        }, label: {
+                            Image(systemName: "ellipses.bubble")
+                                .imageScale(.large)
+                        })
+                        .foregroundStyle(.black)
+                    )
+                ]
+            )
+            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
             ScrollView {
                 PostItem()
                 PostItem()
                 PostItem()
             }
-            .padding(EdgeInsets(top: -8, leading: 0, bottom: -8, trailing: 0))
+            .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
             Rectangle()
                 .frame(height: 0.5)
                 .foregroundStyle(Color(UIColor.secondaryLabel))
         }
+        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
     }
 }
 
