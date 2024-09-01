@@ -22,7 +22,7 @@ struct ReelsView: View {
             topNavigation
             ZStack {
                 Rectangle()
-                    .fill(Color.blue)
+                    .fill(Color.gray)
                     .padding(
                         EdgeInsets(
                             top: 0,
@@ -73,12 +73,41 @@ struct ReelsView: View {
     }
 
     var commentStack: some View {
-        VStack(alignment: .leading) {
-            Text("Correio braziliense")
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(alignment: .center, spacing: 8) {
+                Rectangle()
+                    .fill(Color.yellow)
+                    .cornerRadius(30)
+                    .frame(width: 30, height: 30)
+                Text("Correio braziliense")
+                    .bold()
+                Button(action: {
+                    // TODO
+                }) {
+                    Text("follow")
+                        .padding(
+                            EdgeInsets(
+                                top: 4,
+                                leading: 4,
+                                bottom: 4,
+                                trailing: 4
+                            )
+                        )
+                        .foregroundColor(.black)
+
+                }
+                .padding([.all], 1.0 / 2.0)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color.black, lineWidth: 1.0)
+                )
+
+            }
+
             Text("Um caminhão que transportava gás ...")
             Text("🎵 correio.braziliense . original audio")
         }
-        .background(Color.gray)
+//        .background(Color.gray)
     }
 
     var iconsStack: some View {
@@ -91,30 +120,37 @@ struct ReelsView: View {
                         .imageScale(.large)
                         .foregroundStyle(.black)
                 })
-                Text("123k")
-                    .font(.subheadline)
-            }
-            VStack(spacing: 5) {
                 Button(action: {
                     // TODO:
-                }, label: {
+                }) {
+                    Text("123k")
+                        .font(.subheadline)
+                        .foregroundStyle(Color.black)
+                }
+            }
+            Button(action: {
+                // TODO:
+            }) {
+                VStack(spacing: 5) {
                     Image(systemName: "message")
                         .imageScale(.large)
                         .foregroundStyle(.black)
-                })
-                Text("1.025")
-                    .font(.subheadline)
+                    Text("1.025")
+                        .font(.subheadline)
+                        .foregroundStyle(Color.black)
+                }
             }
-            VStack(spacing: 5) {
-                Button(action: {
-                    // TODO:
-                }, label: {
+            Button(action: {
+                // TODO:
+            }) {
+                VStack(spacing: 5) {
                     Image(systemName: "paperplane")
                         .imageScale(.large)
                         .foregroundStyle(.black)
-                })
-                Text("82,4k")
-                    .font(.subheadline)
+                    Text("82,4k")
+                        .font(.subheadline)
+                        .foregroundStyle(.black)
+                }
             }
             Button(action: {
                 // TODO:
@@ -123,9 +159,7 @@ struct ReelsView: View {
                     .imageScale(.large)
                     .foregroundStyle(.black)
             })
-            Rectangle()
-                .fill(Color.blue)
-                .frame(width: 20, height: 20)
+            .frame(height: 40)
         }
         .frame(width: 40)
 
