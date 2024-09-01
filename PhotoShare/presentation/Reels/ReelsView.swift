@@ -18,8 +18,91 @@ import SwiftUI
 
 struct ReelsView: View {
     var body: some View {
-        // TODO
-        Text("Ok")
+        VStack {
+            topNavigation
+            HStack {
+                Text("Ok")
+            }
+            .background(Color.red)
+            Spacer()
+            HStack {
+                commentStack
+                iconsStack
+            }
+        }
+        .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
+    }
+
+    var topNavigation: some View {
+        let buttons: [AnyView] = [
+            AnyView(
+                Button(action: {
+                    // TODO:
+                }, label: {
+                    Image(systemName: "camera")
+                        .imageScale(.large)
+                })
+                .foregroundStyle(.black)
+            )
+        ]
+        return TopNavigationPanel(
+            title: .simpleText(text: "Reels"),
+            buttons: buttons
+        )
+    }
+
+    var commentStack: some View {
+        VStack(alignment: .leading) {
+            Text("Correio braziliense")
+            Text("Um caminhão que transportava gás ...")
+            Text("🎵 correio.braziliense . original audio")
+        }
+        .background(Color.gray)
+    }
+
+    var iconsStack: some View {
+        VStack(alignment: .center, spacing: 16) {
+            Button(action: {
+                // TODO:
+            }, label: {
+                Image(systemName: "heart")
+                    .imageScale(.large)
+                    .foregroundStyle(.black)
+            })
+            Text("123k")
+                .font(.subheadline)
+            Button(action: {
+                // TODO:
+            }, label: {
+                Image(systemName: "message")
+                    .imageScale(.large)
+                    .foregroundStyle(.black)
+            })
+            Text("1.025")
+                .font(.subheadline)
+            Button(action: {
+                // TODO:
+            }, label: {
+                Image(systemName: "paperplane")
+                    .imageScale(.large)
+                    .foregroundStyle(.black)
+            })
+            Text("82,4k")
+                .font(.subheadline)
+            Button(action: {
+                // TODO:
+            }, label: {
+                Image(systemName: "ellipsis")
+                    .imageScale(.large)
+                    .foregroundStyle(.black)
+            })
+            Rectangle()
+                .fill(Color.blue)
+                .frame(width: 20, height: 20)
+        }
+        .frame(width: 40)
+        .background(Color.yellow)
+        .padding(EdgeInsets(top: 0, leading: 0, bottom: 8, trailing: 0))
     }
 }
 

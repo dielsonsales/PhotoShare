@@ -31,7 +31,7 @@ struct RootView: View {
                 .tabItem {
                     Image(systemName: "plus.app.fill")
                 }
-            StoriesView()
+            ReelsView()
                 .tabItem {
                     Image(systemName: "movieclapper")
                 }
@@ -46,11 +46,5 @@ struct RootView: View {
 struct AddContentView: View {
     var body: some View {
         Text("AddContentView")
-    }
-}
-
-struct StoriesView: View {
-    var body: some View {
-        Text("StoriesView")
     }
 }
