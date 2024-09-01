@@ -22,7 +22,7 @@ struct ReelsView: View {
             topNavigation
             ZStack {
                 Rectangle()
-                    .fill(Color.gray)
+                    .fill(Color.brown)
                     .padding(
                         EdgeInsets(
                             top: 0,
@@ -79,11 +79,12 @@ struct ReelsView: View {
                     .fill(Color.yellow)
                     .cornerRadius(30)
                     .frame(width: 30, height: 30)
-                Text("Correio braziliense")
+                Text("correio.braziliense")
                     .bold()
+                    .foregroundStyle(Color.white)
                 Button(action: {
                     // TODO
-                }) {
+                }, label: {
                     Text("follow")
                         .padding(
                             EdgeInsets(
@@ -93,21 +94,34 @@ struct ReelsView: View {
                                 trailing: 4
                             )
                         )
-                        .foregroundColor(.black)
 
-                }
+                })
                 .padding([.all], 1.0 / 2.0)
                 .overlay(
                     RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color.black, lineWidth: 1.0)
+                        .stroke(Color.white, lineWidth: 1.0)
                 )
+                .foregroundStyle(Color.white)
 
             }
-
-            Text("Um caminhão que transportava gás ...")
-            Text("🎵 correio.braziliense . original audio")
+            Text("Um caminhão que transportava gás na rodovia explodiu")
+                .lineLimit(1)
+                .foregroundStyle(Color.white)
+            ScrollView(.horizontal) {
+                VStack(spacing: 8) {
+                    Button(action: {
+                        // TODO:
+                    }, label: {
+                        Text("🎵 correio.braziliense . original audio")
+                            .font(.subheadline)
+                    })
+                    .background(Color.gray)
+                    .foregroundStyle(.white)
+                    .cornerRadius(8)
+                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+                }
+            }
         }
-//        .background(Color.gray)
     }
 
     var iconsStack: some View {
@@ -118,46 +132,39 @@ struct ReelsView: View {
                 }, label: {
                     Image(systemName: "heart")
                         .imageScale(.large)
-                        .foregroundStyle(.black)
                 })
                 Button(action: {
                     // TODO:
-                }) {
+                }, label: {
                     Text("123k")
                         .font(.subheadline)
-                        .foregroundStyle(Color.black)
-                }
+                })
             }
             Button(action: {
                 // TODO:
-            }) {
+            }, label: {
                 VStack(spacing: 5) {
                     Image(systemName: "message")
                         .imageScale(.large)
-                        .foregroundStyle(.black)
                     Text("1.025")
                         .font(.subheadline)
-                        .foregroundStyle(Color.black)
                 }
-            }
+            })
             Button(action: {
                 // TODO:
-            }) {
+            }, label: {
                 VStack(spacing: 5) {
                     Image(systemName: "paperplane")
                         .imageScale(.large)
-                        .foregroundStyle(.black)
                     Text("82,4k")
                         .font(.subheadline)
-                        .foregroundStyle(.black)
                 }
-            }
+            })
             Button(action: {
                 // TODO:
             }, label: {
                 Image(systemName: "ellipsis")
                     .imageScale(.large)
-                    .foregroundStyle(.black)
             })
             .frame(height: 40)
         }
@@ -171,7 +178,7 @@ struct ReelsView: View {
                 trailing: 0
             )
         )
-        .background(Color.yellow)
+        .foregroundStyle(Color.white)
     }
 }
 
