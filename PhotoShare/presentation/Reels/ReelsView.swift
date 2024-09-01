@@ -75,13 +75,21 @@ struct ReelsView: View {
     var commentStack: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .center, spacing: 8) {
-                Rectangle()
-                    .fill(Color.yellow)
-                    .cornerRadius(30)
-                    .frame(width: 30, height: 30)
-                Text("correio.braziliense")
-                    .bold()
-                    .foregroundStyle(Color.white)
+                Button(action: {
+                    // TODO
+                }, label: {
+                    Rectangle()
+                        .fill(Color.yellow)
+                        .cornerRadius(30)
+                        .frame(width: 30, height: 30)
+                })
+                Button(action: {
+                    // TODO
+                }, label: {
+                    Text("correio.braziliense")
+                        .bold()
+                        .foregroundStyle(Color.white)
+                })
                 Button(action: {
                     // TODO
                 }, label: {
