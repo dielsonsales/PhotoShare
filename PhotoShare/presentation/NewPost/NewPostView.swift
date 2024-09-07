@@ -17,6 +17,9 @@
 import SwiftUI
 
 struct NewPostView: View {
+
+    @Binding var presentScreen: Bool
+
     var body: some View {
         GeometryReader { reader in
             let imageSize = reader.size.width - 16 * 2
@@ -26,7 +29,7 @@ struct NewPostView: View {
                     .fill(Color.blue)
                     .frame(
                         width: imageSize,
-                        height: imageSize
+                        height: imageSize * 0.8
                     )
                 photosList
                 Spacer()
@@ -43,7 +46,7 @@ struct NewPostView: View {
                     // TODO: later
                 }, label: {
                     Button(action: {
-                        // TODO:
+                        presentScreen = false
                     }, label: {
                         Image(systemName: "xmark")
                             .imageScale(.large)
@@ -70,31 +73,34 @@ struct NewPostView: View {
     }
 
     var photosList: some View {
-        HStack {
-            Text("You've given PhotoShare access to a select number of photos and videos.")
-                .lineLimit(2)
-                .font(.subheadline)
-                .foregroundStyle(.gray)
-            Spacer()
-            Button(action: {
-                // TODO: later
-            }, label: {
-                Text("Manage")
-                    .bold()
-                    .foregroundStyle(.white)
-            })
+        VStack {
+            HStack {
+                Text("You've given PhotoShare access to a select number of photos and videos.")
+                    .lineLimit(2)
+                    .font(.subheadline)
+                    .foregroundStyle(.gray)
+                Spacer()
+                Button(action: {
+                    // TODO: later
+                }, label: {
+                    Text("Manage")
+                        .bold()
+                        .foregroundStyle(.white)
+                })
+            }
+            .padding(
+                EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
+            )
+            .frame(height: 70)
+            .background(
+                Color(red: 0.15, green: 0.15, blue: 0.15)
+            )
         }
-        .padding(
-            EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8)
-        )
-        .frame(height: 70)
-        .background(
-            Color(red: 0.15, green: 0.15, blue: 0.15)
-        )
+
     }
 }
 
 #Preview {
-    NewPostView()
+    NewPostView(presentScreen: .constant(true))
         .modelContainer(for: Item.self, inMemory: true)
 }

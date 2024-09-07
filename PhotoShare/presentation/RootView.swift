@@ -17,28 +17,50 @@
 import SwiftUI
 
 struct RootView: View {
+    @State private var presentNewPostScreen = false
+    @State private var selectedTab = 0
     var body: some View {
-        TabView {
+        TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
                     Image(systemName: "house")
                 }
+                .tag(0)
             SearchView()
                 .tabItem {
                     Image(systemName: "text.magnifyingglass.rtl")
                 }
-            NewPostView()
+                .tag(1)
+            Text("New Post")
                 .tabItem {
                     Image(systemName: "plus.app.fill")
                 }
+                .onTapGesture {
+                    presentNewPostScreen = true
+                }
+                .tag(2)
+            .tabItem {
+                Image(systemName: "plus.app.fill")
+            }
             ReelsView()
                 .tabItem {
                     Image(systemName: "movieclapper")
                 }
+                .tag(3)
             ProfileView()
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                 }
+                .tag(4)
         }
+        .onChange(of: selectedTab) { previousTab, newTab in
+            if newTab == 2 {
+                presentNewPostScreen = true
+                selectedTab = previousTab
+            }
+        }
+        .fullScreenCover(isPresented: $presentNewPostScreen, content: {
+            NewPostView(presentScreen: $presentNewPostScreen)
+        })
     }
 }
