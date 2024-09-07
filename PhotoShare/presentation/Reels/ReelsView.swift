@@ -67,8 +67,9 @@ struct ReelsView: View {
             )
         ]
         return TopNavigationPanel(
-            title: .simpleText(text: "Reels"),
-            buttons: buttons
+            title: .simpleText(text: "Reels", contrast: .onLight),
+            leftViews: [],
+            rightViews: buttons
         )
     }
 

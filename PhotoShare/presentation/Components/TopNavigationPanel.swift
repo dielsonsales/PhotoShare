@@ -18,26 +18,42 @@ import SwiftUI
 
 struct TopNavigationPanel: View {
 
+    enum TitleContrast {
+        case onDark
+        case onLight
+    }
+
     enum TitleType {
-        case simpleText(text: String)
+        case simpleText(text: String, contrast: TitleContrast)
         case customView(view: AnyView)
     }
 
     let title: TitleType
-    let buttons: [AnyView]
+    let leftViews: [AnyView]
+    let rightViews: [AnyView]
 
     var body: some View {
-        HStack(alignment: .center, spacing: 16) {
-            switch title {
-            case .simpleText(let text):
-                Text(text)
-                    .font(.title2)
-            case .customView(let view):
-                view
+        ZStack {
+            HStack(alignment: .center, spacing: 16) {
+                Spacer()
+                switch title {
+                case .simpleText(let text, let contrast):
+                    Text(text)
+                        .font(.title2)
+                        .foregroundStyle(contrast == .onDark ? Color.white : Color.black)
+                case .customView(let view):
+                    view
+                }
+                Spacer()
             }
-            Spacer()
-            ForEach(0..<buttons.count, id: \.self) { index in
-                buttons[index]
+            HStack(alignment: .center, spacing: 16) {
+                ForEach(0..<leftViews.count, id: \.self) { index in
+                    leftViews[index]
+                }
+                Spacer()
+                ForEach(0..<rightViews.count, id: \.self) { index in
+                    rightViews[index]
+                }
             }
         }
         .frame(height: 40, alignment: .center)

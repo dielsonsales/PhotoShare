@@ -20,8 +20,9 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 8) {
             TopNavigationPanel(
-                title: .simpleText(text: "Photo Share"),
-                buttons: [
+                title: .simpleText(text: "Photo Share", contrast: .onLight),
+                leftViews: [],
+                rightViews: [
                     AnyView(
                         Button(action: {
                             // TODO:

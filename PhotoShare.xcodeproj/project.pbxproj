@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9055AFE2C8BC8B80038FD67 /* NewPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9055AFD2C8BC8B80038FD67 /* NewPostView.swift */; };
 		E91EB88B2C4FEC360020E3D2 /* SearchLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EB88A2C4FEC360020E3D2 /* SearchLayout.swift */; };
 		E91EB88E2C5073920020E3D2 /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91EB88D2C5073920020E3D2 /* CGPoint.swift */; };
 		E938750C2C796AB20001C3E7 /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938750B2C796AB20001C3E7 /* ReelsView.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E9055AFD2C8BC8B80038FD67 /* NewPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostView.swift; sourceTree = "<group>"; };
 		E91EB88A2C4FEC360020E3D2 /* SearchLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLayout.swift; sourceTree = "<group>"; };
 		E91EB88D2C5073920020E3D2 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		E938750B2C796AB20001C3E7 /* ReelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9055AFC2C8BC8A20038FD67 /* NewPost */ = {
+			isa = PBXGroup;
+			children = (
+				E9055AFD2C8BC8B80038FD67 /* NewPostView.swift */,
+			);
+			path = NewPost;
+			sourceTree = "<group>";
+		};
 		E91EB8892C4FEC070020E3D2 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +177,7 @@
 				E91EB88C2C50737D0020E3D2 /* Extensions */,
 				E947DBBF2C72901500E29837 /* Home */,
 				E93244942C4EC6D400FA6484 /* Login */,
+				E9055AFC2C8BC8A20038FD67 /* NewPost */,
 				E995B2EE2C51619500209AA6 /* Profile */,
 				E938750A2C796A8F0001C3E7 /* Reels */,
 				E91EB8892C4FEC070020E3D2 /* Search */,
@@ -390,6 +401,7 @@
 				E9C968072C4C91BF00F9005D /* LoginManager.swift in Sources */,
 				E995B2F02C51620400209AA6 /* ProfileView.swift in Sources */,
 				E9FB0B3E2C4C2DDC007FA4DD /* Item.swift in Sources */,
+				E9055AFE2C8BC8B80038FD67 /* NewPostView.swift in Sources */,
 				E9C968142C4DA74800F9005D /* HomePost.swift in Sources */,
 				E9C9680B2C4C932D00F9005D /* RootView.swift in Sources */,
 				E9C968162C4DA86800F9005D /* HomeView.swift in Sources */,

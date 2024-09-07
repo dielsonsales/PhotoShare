@@ -100,7 +100,11 @@ struct ProfileView: View {
                 .foregroundStyle(.black)
             )
         ]
-        return TopNavigationPanel(title: .customView(view: leftView), buttons: buttons)
+        return TopNavigationPanel(
+            title: .simpleText(text: "", contrast: .onLight),
+            leftViews: [leftView],
+            rightViews: buttons
+        )
     }
 
     var profileButtons: some View {
