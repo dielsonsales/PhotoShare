@@ -27,7 +27,7 @@ struct RootView: View {
                 .tabItem {
                     Image(systemName: "text.magnifyingglass.rtl")
                 }
-            AddContentView()
+            NewPostView()
                 .tabItem {
                     Image(systemName: "plus.app.fill")
                 }
@@ -40,11 +40,5 @@ struct RootView: View {
                     Image(systemName: "person.crop.circle")
                 }
         }
-    }
-}
-
-struct AddContentView: View {
-    var body: some View {
-        Text("AddContentView")
     }
 }
