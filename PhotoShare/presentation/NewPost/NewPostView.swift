@@ -25,13 +25,12 @@ struct NewPostView: View {
             let imageSize = reader.size.width - 16 * 2
             VStack {
                 topBar
-                Rectangle()
-                    .fill(Color.blue)
+                photoView
                     .frame(
                         width: imageSize,
                         height: imageSize * 0.8
                     )
-                photosList
+                managePhotosView
                 Spacer()
             }
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
@@ -72,7 +71,12 @@ struct NewPostView: View {
         )
     }
 
-    var photosList: some View {
+    var photoView: some View {
+        Rectangle()
+            .fill(Color.blue)
+    }
+
+    var managePhotosView: some View {
         VStack {
             HStack {
                 Text("You've given PhotoShare access to a select number of photos and videos.")
@@ -96,7 +100,6 @@ struct NewPostView: View {
                 Color(red: 0.15, green: 0.15, blue: 0.15)
             )
         }
-
     }
 }
 
