@@ -22,7 +22,7 @@ struct NewPostView: View {
 
     var body: some View {
         GeometryReader { reader in
-            let imageSize = reader.size.width - 16 * 2
+            let imageSize = reader.size.width <= 0 ? 0 : reader.size.width - 16 * 2
             VStack {
                 topBar
                 photoView
