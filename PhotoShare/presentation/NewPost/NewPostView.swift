@@ -31,6 +31,8 @@ struct NewPostView: View {
                         height: imageSize * 0.8
                     )
                 managePhotosView
+                PhotosGridView()
+                    .frame(maxHeight: .infinity)
                 Spacer()
             }
             .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))

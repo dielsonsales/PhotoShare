@@ -20,6 +20,7 @@
 		E9C9680B2C4C932D00F9005D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9680A2C4C932D00F9005D /* RootView.swift */; };
 		E9C968142C4DA74800F9005D /* HomePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C968132C4DA74800F9005D /* HomePost.swift */; };
 		E9C968162C4DA86800F9005D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C968152C4DA86800F9005D /* HomeView.swift */; };
+		E9E49A932CB9875C00C3E898 /* PhotosGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E49A922CB9875300C3E898 /* PhotosGridView.swift */; };
 		E9FB0B3A2C4C2DDC007FA4DD /* PhotoShareApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FB0B392C4C2DDC007FA4DD /* PhotoShareApp.swift */; };
 		E9FB0B3C2C4C2DDC007FA4DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FB0B3B2C4C2DDC007FA4DD /* ContentView.swift */; };
 		E9FB0B3E2C4C2DDC007FA4DD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FB0B3D2C4C2DDC007FA4DD /* Item.swift */; };
@@ -61,6 +62,7 @@
 		E9C9680A2C4C932D00F9005D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		E9C968132C4DA74800F9005D /* HomePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePost.swift; sourceTree = "<group>"; };
 		E9C968152C4DA86800F9005D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E9E49A922CB9875300C3E898 /* PhotosGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosGridView.swift; sourceTree = "<group>"; };
 		E9FB0B362C4C2DDC007FA4DD /* PhotoShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9FB0B392C4C2DDC007FA4DD /* PhotoShareApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoShareApp.swift; sourceTree = "<group>"; };
 		E9FB0B3B2C4C2DDC007FA4DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 		E9055AFC2C8BC8A20038FD67 /* NewPost */ = {
 			isa = PBXGroup;
 			children = (
+				E9E49A922CB9875300C3E898 /* PhotosGridView.swift */,
 				E9055AFD2C8BC8B80038FD67 /* NewPostView.swift */,
 			);
 			path = NewPost;
@@ -394,6 +397,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E49A932CB9875C00C3E898 /* PhotosGridView.swift in Sources */,
 				E91EB88E2C5073920020E3D2 /* CGPoint.swift in Sources */,
 				E938750C2C796AB20001C3E7 /* ReelsView.swift in Sources */,
 				E9FB0B3C2C4C2DDC007FA4DD /* ContentView.swift in Sources */,
