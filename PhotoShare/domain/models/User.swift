@@ -14,32 +14,21 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see https://www.gnu.org/licenses/.
 
-import SwiftUI
-import SwiftData
+import Foundation
+import ParseSwift
 
-@main
-struct PhotoShareApp: App {
+struct User: ParseUser {
+    // MARK: - ParseObject attributes
+    var objectId: String?
+    var createdAt: Date?
+    var updatedAt: Date?
+    var ACL: ParseACL? // swiftlint:disable:this identifier_name
+    var originalData: Data?
 
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
-
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        .modelContainer(sharedModelContainer)
-    }
-
+    // MARK: - ParseUser attributes
+    var username: String?
+    var email: String?
+    var emailVerified: Bool?
+    var password: String?
+    var authData: [String : [String : String]?]?
 }
