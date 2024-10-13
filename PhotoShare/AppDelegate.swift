@@ -19,8 +19,10 @@ import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
 
-    @MainActor
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil
+    ) -> Bool {
         Task {
             try await ParseSwift.initialize(
                 applicationId: "5onbYhOGyHerCFFH7xy6cJ9PhEb65wq8alu2qHTw",
