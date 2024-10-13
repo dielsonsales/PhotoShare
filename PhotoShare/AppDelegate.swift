@@ -14,30 +14,21 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see https://www.gnu.org/licenses/.
 
+import ParseSwift
 import SwiftUI
-import SwiftData
 
-@main
-struct PhotoShareApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+class AppDelegate: NSObject, UIApplicationDelegate {
 
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
+    @MainActor
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        Task {
+            try await ParseSwift.initialize(
+                applicationId: "5onbYhOGyHerCFFH7xy6cJ9PhEb65wq8alu2qHTw",
+                clientKey: "UiH74QrjgzxokJetNGpjL7CHmeuO62oLoxvdaFBa",
+                serverURL: URL(string: "https://parseapi.back4app.com/")!
+            )
         }
-    }()
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        .modelContainer(sharedModelContainer)
+        return true
     }
+
 }

@@ -15,6 +15,8 @@
 		E947DBC22C72B10000E29837 /* TopNavigationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947DBC12C72B10000E29837 /* TopNavigationPanel.swift */; };
 		E94E527A2C569C4D008D1978 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94E52792C569C4D008D1978 /* PagerView.swift */; };
 		E995B2F02C51620400209AA6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E995B2EF2C51620400209AA6 /* ProfileView.swift */; };
+		E99FB4382CBB43D000B0CF35 /* ParseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E99FB4372CBB43D000B0CF35 /* ParseSwift */; };
+		E99FB43A2CBB454400B0CF35 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99FB4392CBB454000B0CF35 /* AppDelegate.swift */; };
 		E9C968072C4C91BF00F9005D /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C968062C4C91BF00F9005D /* LoginManager.swift */; };
 		E9C968092C4C92A000F9005D /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C968082C4C92A000F9005D /* LoginView.swift */; };
 		E9C9680B2C4C932D00F9005D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C9680A2C4C932D00F9005D /* RootView.swift */; };
@@ -57,6 +59,7 @@
 		E947DBC12C72B10000E29837 /* TopNavigationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationPanel.swift; sourceTree = "<group>"; };
 		E94E52792C569C4D008D1978 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
 		E995B2EF2C51620400209AA6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		E99FB4392CBB454000B0CF35 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9C968062C4C91BF00F9005D /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		E9C968082C4C92A000F9005D /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E9C9680A2C4C932D00F9005D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99FB4382CBB43D000B0CF35 /* ParseSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -211,9 +215,10 @@
 		E9FB0B382C4C2DDC007FA4DD /* PhotoShare */ = {
 			isa = PBXGroup;
 			children = (
-				E9C968122C4DA4FE00F9005D /* presentation */,
+				E99FB4392CBB454000B0CF35 /* AppDelegate.swift */,
 				E9FB0B392C4C2DDC007FA4DD /* PhotoShareApp.swift */,
 				E9FB0B3F2C4C2DDD007FA4DD /* Assets.xcassets */,
+				E9C968122C4DA4FE00F9005D /* presentation */,
 				E9FB0B412C4C2DDD007FA4DD /* Preview Content */,
 			);
 			path = PhotoShare;
@@ -333,6 +338,9 @@
 				Base,
 			);
 			mainGroup = E9FB0B2D2C4C2DDB007FA4DD;
+			packageReferences = (
+				E99FB4362CBB43D000B0CF35 /* XCRemoteSwiftPackageReference "parse-swift" */,
+			);
 			productRefGroup = E9FB0B372C4C2DDC007FA4DD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -405,6 +413,7 @@
 				E9C968072C4C91BF00F9005D /* LoginManager.swift in Sources */,
 				E995B2F02C51620400209AA6 /* ProfileView.swift in Sources */,
 				E9FB0B3E2C4C2DDC007FA4DD /* Item.swift in Sources */,
+				E99FB43A2CBB454400B0CF35 /* AppDelegate.swift in Sources */,
 				E9055AFE2C8BC8B80038FD67 /* NewPostView.swift in Sources */,
 				E9C968142C4DA74800F9005D /* HomePost.swift in Sources */,
 				E9C9680B2C4C932D00F9005D /* RootView.swift in Sources */,
@@ -737,6 +746,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E99FB4362CBB43D000B0CF35 /* XCRemoteSwiftPackageReference "parse-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/netreconlab/parse-swift";
+			requirement = {
+				kind = exactVersion;
+				version = 5.11.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E99FB4372CBB43D000B0CF35 /* ParseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E99FB4362CBB43D000B0CF35 /* XCRemoteSwiftPackageReference "parse-swift" */;
+			productName = ParseSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E9FB0B2E2C4C2DDB007FA4DD /* Project object */;
 }

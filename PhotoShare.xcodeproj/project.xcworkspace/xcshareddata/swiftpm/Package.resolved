@@ -1,0 +1,15 @@
+{
+  "originHash" : "46990a1c455e36ad8a727480b163d874cf9ca694d4c02ac0eb1264da3e4db7b7",
+  "pins" : [
+    {
+      "identity" : "parse-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/netreconlab/parse-swift",
+      "state" : {
+        "revision" : "3f02f591398d6cf6467ecc8ced1e45f5714aa868",
+        "version" : "5.11.3"
+      }
+    }
+  ],
+  "version" : 3
+}
