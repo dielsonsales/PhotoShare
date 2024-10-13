@@ -18,6 +18,7 @@ import Foundation
 import ParseSwift
 
 struct Post: ParseObject {
+
     // MARK: - ParseObject attributes
     var objectId: String?
     var createdAt: Date?
@@ -26,6 +27,35 @@ struct Post: ParseObject {
     var originalData: Data?
 
     // MARK: - Custom attributes
-    var image: ParseFile?
+    var photo: ParseFile?
     var caption: String?
+    var likesCount: Int?
+
+    /**
+     * Used for fast decoding after updating a ParseObject
+     */
+    func merge(with object: Post) throws -> Post {
+        var updated = try mergeParse(with: object)
+        if updated.shouldRestoreKey(\.photo, original: object) {
+            updated.photo = object.photo
+        }
+        if updated.shouldRestoreKey(\.caption, original: object) {
+            updated.caption = object.caption
+        }
+        if updated.shouldRestoreKey(\.likesCount, original: object) {
+            updated.likesCount = object.likesCount
+        }
+        return updated
+    }
+
+}
+
+extension Post {
+
+    init(photo: ParseFile, caption: String) {
+        self.photo = photo
+        self.caption = caption
+        likesCount = 0
+    }
+
 }
