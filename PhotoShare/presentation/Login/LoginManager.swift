@@ -14,16 +14,54 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see https://www.gnu.org/licenses/.
 
+import ParseSwift
 import SwiftUI
 
 final class LoginManager: ObservableObject {
-    @Published var isLoggedIn = false
+
+    enum LoginState {
+        case loading
+        case loggedOut
+        case loggedIn
+    }
+
+    @Published var state: LoginState = .loading
+
+    // MARK: - Initializer
+
+    init() {
+        Task {
+            await checkLoginStatus()
+        }
+    }
+
+    // MARK: - Public methods
 
     func login() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation {
-                self.isLoggedIn = true
+                self.state = .loggedIn
             }
         }
     }
+
+    // MARK: - Private methods
+
+    private func checkLoginStatus() async {
+        state = .loading
+        if let _ = try? await User.current() {
+            await MainActor.run {
+                withAnimation {
+                    self.state = .loggedIn
+                }
+            }
+        } else {
+            await MainActor.run {
+                withAnimation {
+                    self.state = .loggedOut
+                }
+            }
+        }
+    }
+
 }
