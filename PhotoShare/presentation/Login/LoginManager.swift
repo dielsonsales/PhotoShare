@@ -49,7 +49,7 @@ final class LoginManager: ObservableObject {
 
     private func checkLoginStatus() async {
         state = .loading
-        if let _ = try? await User.current() {
+        if (try? await User.current()) != nil {
             await MainActor.run {
                 withAnimation {
                     self.state = .loggedIn
