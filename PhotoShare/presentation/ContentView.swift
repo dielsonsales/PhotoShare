@@ -22,19 +22,19 @@ struct ContentView: View {
     @StateObject var loginManager = LoginManager()
 
     var body: some View {
-        switch loginManager.state {
+        switch loginManager.currentState {
         case .loading:
             ProgressView("Loading...")
                 .progressViewStyle(CircularProgressViewStyle())
                 .scaleEffect(1.5)
                 .background(Color(UIColor.systemBackground))
                 .frame(width: 200, height: 200)
-        case .loggedOut:
-            LoginView(loginManager: loginManager)
+        case .userIsLoggedIn:
+            RootView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .transition(.opacity)
-        case .loggedIn:
-            RootView()
+        case .userIsLoggedOut:
+            LoginView(loginManager: loginManager)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .transition(.opacity)
         }

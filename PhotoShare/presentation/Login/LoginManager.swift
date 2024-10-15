@@ -21,11 +21,11 @@ final class LoginManager: ObservableObject {
 
     enum LoginState {
         case loading
-        case loggedOut
-        case loggedIn
+        case userIsLoggedIn
+        case userIsLoggedOut
     }
 
-    @Published var state: LoginState = .loading
+    @Published var currentState: LoginState = .loading
 
     // MARK: - Initializer
 
@@ -40,7 +40,7 @@ final class LoginManager: ObservableObject {
     func login() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             withAnimation {
-                self.state = .loggedIn
+                self.currentState = .userIsLoggedIn
             }
         }
     }
@@ -48,18 +48,18 @@ final class LoginManager: ObservableObject {
     // MARK: - Private methods
 
     private func checkLoginStatus() async {
-        state = .loading
+        currentState = .loading
         let userIsLoggedIn = (try? await User.current()) != nil
         if userIsLoggedIn {
             await MainActor.run {
                 withAnimation {
-                    self.state = .loggedIn
+                    self.currentState = .userIsLoggedIn
                 }
             }
         } else {
             await MainActor.run {
                 withAnimation {
-                    self.state = .loggedOut
+                    self.currentState = .userIsLoggedOut
                 }
             }
         }
