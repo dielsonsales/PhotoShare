@@ -49,7 +49,8 @@ final class LoginManager: ObservableObject {
 
     private func checkLoginStatus() async {
         state = .loading
-        if (try? await User.current()) != nil {
+        let userIsLoggedIn = (try? await User.current()) != nil
+        if userIsLoggedIn {
             await MainActor.run {
                 withAnimation {
                     self.state = .loggedIn
