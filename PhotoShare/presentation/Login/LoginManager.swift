@@ -17,6 +17,7 @@
 import ParseSwift
 import SwiftUI
 
+@MainActor
 final class LoginManager: ObservableObject {
 
     enum LoginState {
@@ -37,8 +38,9 @@ final class LoginManager: ObservableObject {
 
     // MARK: - Public methods
 
-    func login() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+    func login() async {
+        try? await Task.sleep(for: .seconds(2))
+        await MainActor.run {
             withAnimation {
                 self.currentState = .userIsLoggedIn
             }
@@ -49,19 +51,17 @@ final class LoginManager: ObservableObject {
 
     private func checkLoginStatus() async {
         async let currentUser: User? = try? User.current()
-        currentState = .loading
+        withAnimation {
+            self.currentState = .loading
+        }
         let userIsLoggedIn = await currentUser != nil
         if userIsLoggedIn {
-            await MainActor.run {
-                withAnimation {
-                    self.currentState = .userIsLoggedIn
-                }
+            withAnimation {
+                self.currentState = .userIsLoggedIn
             }
         } else {
-            await MainActor.run {
-                withAnimation {
-                    self.currentState = .userIsLoggedOut
-                }
+            withAnimation {
+                self.currentState = .userIsLoggedOut
             }
         }
     }

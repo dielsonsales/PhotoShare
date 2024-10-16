@@ -54,7 +54,9 @@ struct LoginView: View {
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 40, trailing: 0))
 
                 Button("Log in") {
-                    loginManager.login()
+                    Task {
+                        await loginManager.login()
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
