@@ -48,8 +48,9 @@ final class LoginManager: ObservableObject {
     // MARK: - Private methods
 
     private func checkLoginStatus() async {
+        async let currentUser: User? = try? User.current()
         currentState = .loading
-        let userIsLoggedIn = (try? await User.current()) != nil
+        let userIsLoggedIn = await currentUser != nil
         if userIsLoggedIn {
             await MainActor.run {
                 withAnimation {
