@@ -14,9 +14,13 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see https://www.gnu.org/licenses/.
 
+import Observation
 import SwiftUI
 
 struct HomeView: View {
+
+    @StateObject private var viewModel = HomeViewModel()
+
     var body: some View {
         VStack(spacing: 8) {
             TopNavigationPanel(
@@ -45,9 +49,9 @@ struct HomeView: View {
             )
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
             ScrollView {
-                PostItem()
-                PostItem()
-                PostItem()
+                ForEach(viewModel.posts.indices, id: \.self) { index in
+                    PostItem(homePost: $viewModel.posts[index])
+                }
             }
             .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
             Rectangle()
@@ -59,6 +63,9 @@ struct HomeView: View {
 }
 
 struct PostItem: View {
+
+    @Binding var homePost: HomePost
+
     var body: some View {
         VStack {
             HStack {
@@ -69,9 +76,9 @@ struct PostItem: View {
                     .cornerRadius(15)
                     .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
                 VStack(alignment: .leading) {
-                    Text("retrocomputers")
+                    Text(homePost.userDisplayName)
                         .font(.caption)
-                    Text("retrocomputers_")
+                    Text(homePost.username)
                         .font(.caption)
                 }
                 Spacer()
@@ -85,27 +92,41 @@ struct PostItem: View {
                     .fill(Color.blue)
             }
             .frame(minWidth: nil, maxWidth: .infinity, minHeight: 400, maxHeight: 400)
-            HStack {
+            HStack(spacing: 10) {
                 Button(action: {
                     // TODO:
                 }, label: {
-                    Image(systemName: "heart")
-                        .imageScale(.large)
-                        .foregroundStyle(.black)
+                    HStack(spacing: 2) {
+                        Image(systemName: "heart")
+                            .imageScale(.large)
+                            .foregroundStyle(.black)
+                        Text(String(homePost.likesCount))
+                            .foregroundStyle(.black)
+                    }
                 })
                 Button(action: {
                     // TODO:
                 }, label: {
-                    Image(systemName: "message")
-                        .imageScale(.large)
-                        .foregroundStyle(.black)
+                    HStack(spacing: 2) {
+                        Image(systemName: "message")
+                            .imageScale(.large)
+                            .foregroundStyle(.black)
+                        Text(String(homePost.commentsCount))
+                            .foregroundStyle(.black)
+                    }
+
                 })
                 Button(action: {
                     // TODO:
                 }, label: {
-                    Image(systemName: "paperplane")
-                        .imageScale(.large)
-                        .foregroundStyle(.black)
+                    HStack(spacing: 2) {
+                        Image(systemName: "paperplane")
+                            .imageScale(.large)
+                            .foregroundStyle(.black)
+                        Text(String(homePost.sharesCount))
+                            .foregroundStyle(.black)
+                    }
+
                 })
                 Spacer()
                 Button(action: {

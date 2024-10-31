@@ -16,14 +16,14 @@
 
 import SwiftUI
 
-final class LoginVieModel: ObservableObject {
+final class LoginModel: ObservableObject {
     @Published var username = ""
     @Published var password = ""
 }
 
 struct LoginView: View {
-    @ObservedObject var loginManager: LoginManager
-    @StateObject var loginModel = LoginVieModel()
+    @ObservedObject var viewModel: LoginViewModel
+    @StateObject var loginModel = LoginModel()
 
     var body: some View {
         VStack {
@@ -54,7 +54,12 @@ struct LoginView: View {
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 40, trailing: 0))
 
                 Button("Log in") {
-                    loginManager.login()
+                    Task {
+                        await viewModel.login(
+                            username: loginModel.username,
+                            password: loginModel.password
+                        )
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .padding()
@@ -83,6 +88,6 @@ struct LoginView: View {
 }
 
 #Preview {
-    LoginView(loginManager: LoginManager())
+    LoginView(viewModel: LoginViewModel())
         .modelContainer(for: Item.self, inMemory: true)
 }

@@ -19,15 +19,22 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @StateObject var loginManager = LoginManager()
+    @StateObject var loginManager = LoginViewModel()
 
     var body: some View {
-        if loginManager.isLoggedIn {
+        switch loginManager.currentState {
+        case .loading:
+            ProgressView("Loading...")
+                .progressViewStyle(CircularProgressViewStyle())
+                .scaleEffect(1.5)
+                .background(Color(UIColor.systemBackground))
+                .frame(width: 200, height: 200)
+        case .userIsLoggedIn:
             RootView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .transition(.opacity)
-        } else {
-            LoginView(loginManager: loginManager)
+        case .userIsLoggedOut:
+            LoginView(viewModel: loginManager)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .transition(.opacity)
         }

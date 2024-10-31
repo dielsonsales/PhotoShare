@@ -14,16 +14,22 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see https://www.gnu.org/licenses/.
 
-import SwiftUI
+import Foundation
+import ParseSwift
 
-final class LoginManager: ObservableObject {
-    @Published var isLoggedIn = false
+struct PostComment: ParseObject {
 
-    func login() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            withAnimation {
-                self.isLoggedIn = true
-            }
-        }
-    }
+    // MARK: - ParseObject attributes
+    var objectId: String?
+    var createdAt: Date?
+    var updatedAt: Date?
+    var ACL: ParseACL?
+    var originalData: Data?
+
+    // MARK: - PostComment attributes
+    var author: Pointer<User>?
+    var post: Pointer<Post>?
+    var text: String?
+    var likesCount: Int?
+
 }
