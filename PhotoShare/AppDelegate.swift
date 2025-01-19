@@ -40,7 +40,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     private func loadParseConfig() -> [String: String]? {
         if let url = Bundle.main.url(forResource: "ParseConfig", withExtension: "plist"),
            let data = try? Data(contentsOf: url),
-           let plist = try? PropertyListSerialization.propertyList(from: data, options: [], format: nil) as? [String: String] {
+           let plist = try? PropertyListSerialization.propertyList(
+               from: data,
+               options: [],
+               format: nil
+           ) as? [String: String] {
             return plist
         }
         return nil
