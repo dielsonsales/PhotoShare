@@ -40,6 +40,10 @@ final class LoginViewModel: ObservableObject {
 
     func login(username: String, password: String) async {
         do {
+            guard try await NetworkChecker.isServerAvailable() else {
+                Logger.logError("Server health isn't ok")
+                return
+            }
             try await User.login(username: username,password: password)
             await MainActor.run {
                 withAnimation {
@@ -52,21 +56,6 @@ final class LoginViewModel: ObservableObject {
                 print("Error is \(error.localizedDescription)")
             }
         }
-
-
-//        User.login(username: username,password: password) { result in
-//            await MainActor.run {
-//                switch result {
-//                case .success(let user):
-//                    withAnimation {
-//                        self.currentState = .userIsLoggedIn
-//                    }
-//                case .failure(let error):
-//                    // TODO: show error message
-//                    break
-//                }
-//            }
-//        }
     }
 
     // MARK: - Private methods
