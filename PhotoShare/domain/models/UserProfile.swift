@@ -19,14 +19,14 @@ import ParseSwift
 
 struct UserProfile: ParseObject {
 
-    // MARK: - ParseObject attributes
+    // MARK: - ParseObject properties
     var objectId: String?
     var createdAt: Date?
     var updatedAt: Date?
     var ACL: ParseACL?
     var originalData: Data?
 
-    // MARK: - UserProfile attributes
+    // MARK: - UserProfile properties
     var user: Pointer<User>?
     var picture: ParseFile?
     var displayName: String?

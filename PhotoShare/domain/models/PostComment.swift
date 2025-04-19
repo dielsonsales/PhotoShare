@@ -19,14 +19,14 @@ import ParseSwift
 
 struct PostComment: ParseObject {
 
-    // MARK: - ParseObject attributes
+    // MARK: - ParseObject properties
     var objectId: String?
     var createdAt: Date?
     var updatedAt: Date?
     var ACL: ParseACL?
     var originalData: Data?
 
-    // MARK: - PostComment attributes
+    // MARK: - PostComment properties
     var author: Pointer<User>?
     var post: Pointer<Post>?
     var text: String?

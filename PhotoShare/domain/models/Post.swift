@@ -19,14 +19,14 @@ import ParseSwift
 
 struct Post: ParseObject {
 
-    // MARK: - ParseObject attributes
+    // MARK: - ParseObject properties
     var objectId: String?
     var createdAt: Date?
     var updatedAt: Date?
     var ACL: ParseACL?
     var originalData: Data?
 
-    // MARK: - Custom attributes
+    // MARK: - Post properties
     var user: Pointer<User>?
     var photo: ParseFile?
     var caption: String?

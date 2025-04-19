@@ -19,14 +19,14 @@ import ParseSwift
 
 struct User: ParseUser {
 
-    // MARK: - ParseObject attributes
+    // MARK: - ParseObject properties
     var objectId: String?
     var createdAt: Date?
     var updatedAt: Date?
     var ACL: ParseACL?
     var originalData: Data?
 
-    // MARK: - ParseUser attributes
+    // MARK: - ParseUser properties
     var username: String?
     var email: String?
     var emailVerified: Bool?
