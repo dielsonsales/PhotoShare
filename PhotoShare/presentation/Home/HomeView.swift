@@ -21,45 +21,68 @@ struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
 
     var body: some View {
-        VStack(spacing: 8) {
-            TopNavigationPanel(
-                title: .simpleText(text: "Photo Share", contrast: .onLight),
-                leftViews: [],
-                rightViews: [
-                    AnyView(
-                        Button(action: {
-                            // TODO:
-                        }, label: {
-                            Image(systemName: "heart")
-                                .imageScale(.large)
-                        })
-                        .foregroundStyle(.black)
-                    ),
-                    AnyView(
-                        Button(action: {
-                            // TODO:
-                        }, label: {
-                            Image(systemName: "ellipses.bubble")
-                                .imageScale(.large)
-                        })
-                        .foregroundStyle(.black)
-                    )
-                ]
-            )
-            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-            ScrollView {
-                ForEach(viewModel.posts.indices, id: \.self) { index in
-                    PostItem(viewModel: $viewModel.posts[index])
+        NavigationStack {
+            VStack(spacing: 8) {
+                TopNavigationPanel(
+                    title: .simpleText(text: "Photo Share", contrast: .onLight),
+                    leftViews: [],
+                    rightViews: [
+                        AnyView(
+                            Button(action: {
+                                // TODO:
+                            }, label: {
+                                Image(systemName: "heart")
+                                    .imageScale(.large)
+                            })
+                            .foregroundStyle(.black)
+                        ),
+                        AnyView(
+                            Button(action: {
+                                // TODO:
+                            }, label: {
+                                Image(systemName: "ellipses.bubble")
+                                    .imageScale(.large)
+                            })
+                            .foregroundStyle(.black)
+                        )
+                    ]
+                )
+                .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+//                List(viewModel.posts, id: \.id) { postItemViewModel in
+//                    NavigationLink(
+//                        destination: PostDetailView(
+//                            viewModel: PostDetailViewModel(postItem: postItemViewModel)
+//                        )
+//                    ) {
+//                        PostItem(viewModel: postItemViewModel)
+//                            .listRowSeparator(.hidden)
+//                    }
+//                }
+//                .listStyle(.plain)
+//                .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
+                ScrollView {
+                    VStack(spacing: 0) {
+                        ForEach(viewModel.posts.indices, id: \.self) { index in
+                            NavigationLink(
+                                destination: PostDetailView(
+                                    viewModel: PostDetailViewModel(postItem: viewModel.posts[index])
+                                )
+                            ) {
+                                PostItem(viewModel: viewModel.posts[index])
+                                    .foregroundStyle(.primary)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
                 }
+                .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
+                PSSeparator()
             }
-            .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
-            PSSeparator()
+            .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
         }
-        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
     }
 }
 
 #Preview {
     HomeView()
-        .modelContainer(for: Item.self, inMemory: true)
 }

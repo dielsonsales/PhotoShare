@@ -17,12 +17,12 @@
 import SwiftUI
 
 struct PostDetailView: View {
-    @Binding var viewModel: PostDetailViewModel
+    @StateObject var viewModel: PostDetailViewModel
 
     var body: some View {
         VStack {
             ScrollView {
-                PostItem(viewModel: $viewModel.postItem)
+                PostItem(viewModel: viewModel.postItem)
                 VStack(alignment: .leading, spacing: 5) {
                     ForEach(viewModel.comments, id: \.id) { commentViewModel in
                         CommentItem(viewModel: commentViewModel)
@@ -49,19 +49,17 @@ struct PostDetailView: View {
 
 #Preview {
     PostDetailView(
-        viewModel: .constant(
-            PostDetailViewModel(
-                postItem: PostItemViewModel(
-                    userDisplayName: "retrocomputers",
-                    username: "retrocomputers_",
-                    userImageURL: "",
-                    imageURL: "",
-                    description: "This is an image description",
-                    likesCount: 54,
-                    commentsCount: 5,
-                    sharesCount: 8,
-                    isFavorite: false
-                )
+        viewModel: PostDetailViewModel(
+            postItem: PostItemViewModel(
+                userDisplayName: "retrocomputers",
+                username: "retrocomputers_",
+                userImageURL: "",
+                imageURL: "",
+                description: "This is an image description",
+                likesCount: 54,
+                commentsCount: 5,
+                sharesCount: 8,
+                isFavorite: false
             )
         )
     )

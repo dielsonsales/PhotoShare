@@ -17,7 +17,7 @@
 import SwiftUI
 
 struct PostItem: View {
-    @Binding var viewModel: PostItemViewModel
+    @ObservedObject var viewModel: PostItemViewModel
 
     var body: some View {
         VStack {

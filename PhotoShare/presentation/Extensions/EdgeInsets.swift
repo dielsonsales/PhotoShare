@@ -16,27 +16,8 @@
 
 import SwiftUI
 
-struct CommentItem: View {
-    @StateObject var viewModel: CommentItemViewModel
-
-    var body: some View {
-        HStack(alignment: .top, spacing: 8) {
-            PSImageView()
-                .frame(width: 30, height: 30)
-                .cornerRadius(15)
-            VStack {
-                VStack(alignment: .leading) {
-                    Text("Marcos Oliveira")
-                        .font(.headline)
-                    Text("Que legal!")
-                        .font(.body)
-                }
-                .padding()
-            }
-            .background(Color(UIColor.secondarySystemBackground))
-            .cornerRadius(20)
-            Spacer()
-        }
-        .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+extension EdgeInsets {
+    static var zero: EdgeInsets {
+        EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
     }
 }
