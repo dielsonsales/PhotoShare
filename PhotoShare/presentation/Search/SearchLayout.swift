@@ -9,7 +9,6 @@ import SwiftUI
 
 // Ref: https://github.com/apptekstudios/SwiftUILayouts/blob/main/Sources/SwiftUILayouts/VerticalWaterfallLayout.swift
 struct SearchLayout: Layout {
-
     struct Column {
         var height: CGFloat = 0
         var width: CGFloat = 0

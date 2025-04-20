@@ -17,7 +17,6 @@
 import SwiftUI
 
 struct PhotosGridView: View {
-
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -49,7 +48,5 @@ struct PhotosGridView: View {
             }
             .padding()
         }
-
     }
-
 }

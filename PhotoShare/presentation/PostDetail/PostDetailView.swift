@@ -17,7 +17,6 @@
 import SwiftUI
 
 struct PostDetailView: View {
-
     @Binding var itemViweModel: PostItemViewModel
 
     var body: some View {
@@ -25,7 +24,6 @@ struct PostDetailView: View {
             PostItem(viewModel: $itemViweModel)
         }
     }
-
 }
 
 #Preview {

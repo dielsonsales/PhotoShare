@@ -40,7 +40,6 @@ struct ReelsView: View {
                         Spacer()
                         iconsStack
                     }
-
                 }
             }
         }
@@ -103,7 +102,6 @@ struct ReelsView: View {
                                 trailing: 4
                             )
                         )
-
                 })
                 .padding([.all], 1.0 / 2.0)
                 .overlay(
@@ -111,7 +109,6 @@ struct ReelsView: View {
                         .stroke(Color.white, lineWidth: 1.0)
                 )
                 .foregroundStyle(Color.white)
-
             }
             Text("Um caminhão que transportava gás na rodovia explodiu")
                 .lineLimit(1)

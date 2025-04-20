@@ -17,7 +17,6 @@
 import SwiftUI
 
 struct TopNavigationPanel: View {
-
     enum TitleContrast {
         case onDark
         case onLight

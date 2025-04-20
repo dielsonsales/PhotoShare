@@ -17,7 +17,6 @@
 import SwiftUI
 
 struct PostItem: View {
-
     @Binding var viewModel: PostItemViewModel
 
     var body: some View {
@@ -68,7 +67,6 @@ struct PostItem: View {
                         Text(String(viewModel.commentsCount))
                             .foregroundStyle(.black)
                     }
-
                 })
                 Button(action: {
                     // TODO:
@@ -80,7 +78,6 @@ struct PostItem: View {
                         Text(String(viewModel.sharesCount))
                             .foregroundStyle(.black)
                     }
-
                 })
                 Spacer()
                 Button(action: {

@@ -62,3 +62,10 @@ identifier_name:
     - URL
     - GlobalAPIKey
 reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, codeclimate, junit, html, emoji, sonarqube, markdown, github-actions-logging, summary)
+
+custom_rules:
+  no_empty_lines_inside_braces:
+    name: "No Empty Lines Inside Braces"
+    regex: '\{\n\s*\n|\n\s*\n\s*\}'
+    message: "Don't leave an empty line after `{` or before `}`"
+    severity: warning

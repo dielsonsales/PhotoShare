@@ -127,14 +127,12 @@ struct ProfileView: View {
                 Image(systemName: "person.badge.plus")
                     .imageScale(.medium)
                     .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-
             })
             .frame(maxHeight: .infinity)
             .background(Color(UIColor.secondarySystemBackground))
             .foregroundStyle(.black)
             .cornerRadius(8)
             .padding(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
-
         }
         .frame(height: 54)
         .frame(maxWidth: .infinity)

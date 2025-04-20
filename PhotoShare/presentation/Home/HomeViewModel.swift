@@ -17,7 +17,6 @@
 import Foundation
 
 class HomeViewModel: ObservableObject {
-
     @Published var posts = [PostItemViewModel]()
 
     init() {
@@ -57,5 +56,4 @@ class HomeViewModel: ObservableObject {
             )
         ]
     }
-
 }

@@ -17,7 +17,5 @@
 import Foundation
 
 class PostDetailViewModel: ObservableObject {
-
     @Published var post: PostItemViewModel?
-
 }

@@ -19,7 +19,6 @@ import SwiftUI
 
 @MainActor
 final class LoginViewModel: ObservableObject {
-
     enum LoginState {
         case loading
         case userIsLoggedIn
@@ -76,5 +75,4 @@ final class LoginViewModel: ObservableObject {
             }
         }
     }
-
 }

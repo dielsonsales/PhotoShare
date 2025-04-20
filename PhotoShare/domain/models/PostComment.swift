@@ -18,7 +18,6 @@ import Foundation
 import ParseSwift
 
 struct PostComment: ParseObject {
-
     // MARK: - ParseObject properties
     var objectId: String?
     var createdAt: Date?
@@ -31,5 +30,4 @@ struct PostComment: ParseObject {
     var post: Pointer<Post>?
     var text: String?
     var likesCount: Int?
-
 }

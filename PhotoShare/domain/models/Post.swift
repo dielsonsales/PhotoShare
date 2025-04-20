@@ -18,7 +18,6 @@ import Foundation
 import ParseSwift
 
 struct Post: ParseObject {
-
     // MARK: - ParseObject properties
     var objectId: String?
     var createdAt: Date?
@@ -48,5 +47,4 @@ struct Post: ParseObject {
         }
         return updated
     }
-
 }

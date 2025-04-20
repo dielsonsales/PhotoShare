@@ -18,7 +18,6 @@ import Foundation
 import ParseSwift
 
 struct User: ParseUser {
-
     // MARK: - ParseObject properties
     var objectId: String?
     var createdAt: Date?
@@ -32,5 +31,4 @@ struct User: ParseUser {
     var emailVerified: Bool?
     var password: String?
     var authData: [String : [String : String]?]?
-
 }

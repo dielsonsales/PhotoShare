@@ -19,7 +19,6 @@ import SwiftData
 
 @main
 struct PhotoShareApp: App {
-
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
 
     var sharedModelContainer: ModelContainer = {
@@ -41,5 +40,4 @@ struct PhotoShareApp: App {
         }
         .modelContainer(sharedModelContainer)
     }
-
 }

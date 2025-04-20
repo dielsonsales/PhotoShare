@@ -17,7 +17,6 @@
 import SwiftUI
 
 struct NewPostView: View {
-
     @Binding var presentScreen: Bool
 
     var body: some View {

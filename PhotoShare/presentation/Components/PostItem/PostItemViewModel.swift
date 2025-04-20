@@ -18,7 +18,6 @@ import Observation
 import SwiftUI
 
 class PostItemViewModel: ObservableObject, Identifiable {
-
     // MARK: - Attributes
     let id = UUID()
     @Published var userDisplayName: String
@@ -53,5 +52,4 @@ class PostItemViewModel: ObservableObject, Identifiable {
         self.sharesCount = sharesCount
         self.isFavorite = isFavorite
     }
-
 }
