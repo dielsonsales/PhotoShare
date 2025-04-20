@@ -14,34 +14,10 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see https://www.gnu.org/licenses/.
 
-import SwiftUI
+import Foundation
 
-struct PostDetailView: View {
+class PostDetailViewModel: ObservableObject {
 
-    @Binding var itemViweModel: PostItemViewModel
+    @Published var post: PostItemViewModel?
 
-    var body: some View {
-        VStack {
-            PostItem(viewModel: $itemViweModel)
-        }
-    }
-
-}
-
-#Preview {
-    PostDetailView(
-        itemViweModel: .constant(
-            PostItemViewModel(
-                userDisplayName: "retrocomputers",
-                username: "retrocomputers_",
-                userImageURL: "",
-                imageURL: "",
-                description: "This is an image description",
-                likesCount: 54,
-                commentsCount: 5,
-                sharesCount: 8,
-                isFavorite: false
-            )
-        )
-    )
 }

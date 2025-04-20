@@ -21,15 +21,15 @@ class PostItemViewModel: ObservableObject, Identifiable {
 
     // MARK: - Attributes
     let id = UUID()
-    var userDisplayName: String
-    var username: String
-    var userImageURL: String
-    var imageURL: String
-    var description: String
-    var likesCount: Int
-    var commentsCount: Int
-    var sharesCount: Int
-    var isFavorite: Bool
+    @Published var userDisplayName: String
+    @Published var username: String
+    @Published var userImageURL: String
+    @Published var imageURL: String
+    @Published var description: String
+    @Published var likesCount: Int
+    @Published var commentsCount: Int
+    @Published var sharesCount: Int
+    @Published var isFavorite: Bool
 
     // MARK: - Initializer
     init(
