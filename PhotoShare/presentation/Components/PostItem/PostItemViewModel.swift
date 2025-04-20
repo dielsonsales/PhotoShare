@@ -17,7 +17,7 @@
 import Observation
 import SwiftUI
 
-class HomePost: ObservableObject, Identifiable {
+class PostItemViewModel: ObservableObject, Identifiable {
 
     // MARK: - Attributes
     let id = UUID()

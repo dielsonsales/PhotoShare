@@ -50,7 +50,7 @@ struct HomeView: View {
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
             ScrollView {
                 ForEach(viewModel.posts.indices, id: \.self) { index in
-                    PostItem(homePost: $viewModel.posts[index])
+                    PostItem(viewModel: $viewModel.posts[index])
                 }
             }
             .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
@@ -58,88 +58,6 @@ struct HomeView: View {
                 .frame(height: 0.5)
                 .foregroundStyle(Color(UIColor.secondaryLabel))
         }
-        .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-    }
-}
-
-struct PostItem: View {
-
-    @Binding var homePost: HomePost
-
-    var body: some View {
-        VStack {
-            HStack {
-                Rectangle()
-                    .fill(Color.blue)
-                    .background(Color.blue)
-                    .frame(width: 30, height: 30)
-                    .cornerRadius(15)
-                    .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
-                VStack(alignment: .leading) {
-                    Text(homePost.userDisplayName)
-                        .font(.caption)
-                    Text(homePost.username)
-                        .font(.caption)
-                }
-                Spacer()
-                Image(systemName: "ellipsis")
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
-            }
-            .frame(maxWidth: .infinity)
-            .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
-            ZStack {
-                Rectangle()
-                    .fill(Color.blue)
-            }
-            .frame(minWidth: nil, maxWidth: .infinity, minHeight: 400, maxHeight: 400)
-            HStack(spacing: 10) {
-                Button(action: {
-                    // TODO:
-                }, label: {
-                    HStack(spacing: 2) {
-                        Image(systemName: "heart")
-                            .imageScale(.large)
-                            .foregroundStyle(.black)
-                        Text(String(homePost.likesCount))
-                            .foregroundStyle(.black)
-                    }
-                })
-                Button(action: {
-                    // TODO:
-                }, label: {
-                    HStack(spacing: 2) {
-                        Image(systemName: "message")
-                            .imageScale(.large)
-                            .foregroundStyle(.black)
-                        Text(String(homePost.commentsCount))
-                            .foregroundStyle(.black)
-                    }
-
-                })
-                Button(action: {
-                    // TODO:
-                }, label: {
-                    HStack(spacing: 2) {
-                        Image(systemName: "paperplane")
-                            .imageScale(.large)
-                            .foregroundStyle(.black)
-                        Text(String(homePost.sharesCount))
-                            .foregroundStyle(.black)
-                    }
-
-                })
-                Spacer()
-                Button(action: {
-                    // TODO:
-                }, label: {
-                    Image(systemName: "star")
-                        .imageScale(.large)
-                        .foregroundStyle(.black)
-                })
-            }
-            .padding(EdgeInsets(top: 1, leading: 8, bottom: 8, trailing: 8))
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
     }
 }

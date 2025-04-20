@@ -18,11 +18,11 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
 
-    @Published var posts = [HomePost]()
+    @Published var posts = [PostItemViewModel]()
 
     init() {
         posts = [
-            HomePost(
+            PostItemViewModel(
                 userDisplayName: "retrocomputers",
                 username: "retrocomputers_",
                 userImageURL: "",
@@ -33,7 +33,7 @@ class HomeViewModel: ObservableObject {
                 sharesCount: 8,
                 isFavorite: false
             ),
-            HomePost(
+            PostItemViewModel(
                 userDisplayName: "retrocomputers",
                 username: "retrocomputers_",
                 userImageURL: "",
@@ -44,7 +44,7 @@ class HomeViewModel: ObservableObject {
                 sharesCount: 8,
                 isFavorite: false
             ),
-            HomePost(
+            PostItemViewModel(
                 userDisplayName: "retrocomputers",
                 username: "retrocomputers_",
                 userImageURL: "",
