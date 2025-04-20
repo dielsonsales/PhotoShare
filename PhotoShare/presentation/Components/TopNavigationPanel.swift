@@ -24,7 +24,7 @@ struct TopNavigationPanel: View {
 
     enum TitleType {
         case simpleText(text: String, contrast: TitleContrast)
-        case customView(view: AnyView)
+        case customView(view: AnyView, label: String)
     }
 
     let title: TitleType
@@ -40,8 +40,12 @@ struct TopNavigationPanel: View {
                     Text(text)
                         .font(.title2)
                         .foregroundStyle(contrast == .onDark ? Color.white : Color.black)
-                case .customView(let view):
+                        .accessibilityLabel(text)
+                        .accessibilityAddTraits(.isHeader)
+                case let .customView(view, label):
                     view
+                        .accessibilityLabel(label)
+                        .accessibilityAddTraits(.isHeader)
                 }
                 Spacer()
             }
