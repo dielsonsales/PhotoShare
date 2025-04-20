@@ -21,7 +21,28 @@ struct PostDetailView: View {
 
     var body: some View {
         VStack {
-            PostItem(viewModel: $viewModel.postItem)
+            ScrollView {
+                PostItem(viewModel: $viewModel.postItem)
+                VStack(alignment: .leading, spacing: 5) {
+                    ForEach(viewModel.comments, id: \.id) { commentViewModel in
+                        CommentItem(viewModel: commentViewModel)
+                    }
+                }
+            }
+            PSSeparator()
+            HStack {
+                TextField("Escreva um comentário...", text: $viewModel.inputText)
+                    .padding()
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .cornerRadius(20)
+                Button(action: {
+                    // TODO:
+                }, label: {
+                    Image(systemName: "paperplane.circle.fill")
+                        .imageScale(.large)
+                })
+            }
+            .padding(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
         }
     }
 }

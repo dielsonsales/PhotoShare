@@ -18,8 +18,24 @@ import SwiftUI
 
 class PostDetailViewModel: ObservableObject {
     @ObservedObject var postItem: PostItemViewModel
+    @Published var inputText: String = ""
+    @Published var comments: [CommentItemViewModel]
 
-    init(postItem: PostItemViewModel) {
+    init(postItem: PostItemViewModel, comments: [CommentItemViewModel]? = nil) {
         self.postItem = postItem
+        if let comments {
+            self.comments = comments
+        } else {
+            var postComment: PostComment = PostComment()
+            postComment.text = "Que legal!"
+            self.comments = [
+                CommentItemViewModel(comment: postComment),
+                CommentItemViewModel(comment: postComment),
+                CommentItemViewModel(comment: postComment),
+                CommentItemViewModel(comment: postComment),
+                CommentItemViewModel(comment: postComment),
+                CommentItemViewModel(comment: postComment)
+            ]
+        }
     }
 }

@@ -15,6 +15,8 @@
 		E930EDD92DB5383300E45AA2 /* PostDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDD82DB5382D00E45AA2 /* PostDetailViewModel.swift */; };
 		E930EDDB2DB560A800E45AA2 /* PSSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDDA2DB560A100E45AA2 /* PSSeparator.swift */; };
 		E930EDDD2DB5618B00E45AA2 /* PSImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDDC2DB5618600E45AA2 /* PSImageView.swift */; };
+		E930EDDF2DB563DF00E45AA2 /* CommentItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDDE2DB563CF00E45AA2 /* CommentItem.swift */; };
+		E930EDE22DB563F800E45AA2 /* CommentItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDE12DB563F200E45AA2 /* CommentItemViewModel.swift */; };
 		E938750C2C796AB20001C3E7 /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938750B2C796AB20001C3E7 /* ReelsView.swift */; };
 		E94231AC2C4DEDBF00C6E876 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94231AB2C4DEDBF00C6E876 /* SearchView.swift */; };
 		E947DBC22C72B10000E29837 /* TopNavigationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947DBC12C72B10000E29837 /* TopNavigationPanel.swift */; };
@@ -72,6 +74,8 @@
 		E930EDD82DB5382D00E45AA2 /* PostDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewModel.swift; sourceTree = "<group>"; };
 		E930EDDA2DB560A100E45AA2 /* PSSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSSeparator.swift; sourceTree = "<group>"; };
 		E930EDDC2DB5618600E45AA2 /* PSImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSImageView.swift; sourceTree = "<group>"; };
+		E930EDDE2DB563CF00E45AA2 /* CommentItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItem.swift; sourceTree = "<group>"; };
+		E930EDE12DB563F200E45AA2 /* CommentItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentItemViewModel.swift; sourceTree = "<group>"; };
 		E938750B2C796AB20001C3E7 /* ReelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
 		E94231AB2C4DEDBF00C6E876 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		E947DBC12C72B10000E29837 /* TopNavigationPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationPanel.swift; sourceTree = "<group>"; };
@@ -175,6 +179,15 @@
 			path = PostItem;
 			sourceTree = "<group>";
 		};
+		E930EDE02DB563E600E45AA2 /* CommentItem */ = {
+			isa = PBXGroup;
+			children = (
+				E930EDE12DB563F200E45AA2 /* CommentItemViewModel.swift */,
+				E930EDDE2DB563CF00E45AA2 /* CommentItem.swift */,
+			);
+			path = CommentItem;
+			sourceTree = "<group>";
+		};
 		E93244942C4EC6D400FA6484 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,6 +217,7 @@
 		E947DBC02C72AF6B00E29837 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E930EDE02DB563E600E45AA2 /* CommentItem */,
 				E930EDDC2DB5618600E45AA2 /* PSImageView.swift */,
 				E930EDDA2DB560A100E45AA2 /* PSSeparator.swift */,
 				E930EDD72DB5356A00E45AA2 /* PostItem */,
@@ -488,6 +502,7 @@
 				E9E49A932CB9875C00C3E898 /* PhotosGridView.swift in Sources */,
 				E91EB88E2C5073920020E3D2 /* CGPoint.swift in Sources */,
 				E938750C2C796AB20001C3E7 /* ReelsView.swift in Sources */,
+				E930EDE22DB563F800E45AA2 /* CommentItemViewModel.swift in Sources */,
 				E9FB0B3C2C4C2DDC007FA4DD /* ContentView.swift in Sources */,
 				E94231AC2C4DEDBF00C6E876 /* SearchView.swift in Sources */,
 				E9C0A6F02CD2EEA7006E4C46 /* HomeViewModel.swift in Sources */,
@@ -506,6 +521,7 @@
 				E9C0A6EC2CD2AACD006E4C46 /* PostComment.swift in Sources */,
 				E91EB88B2C4FEC360020E3D2 /* SearchLayout.swift in Sources */,
 				E9C0A6EE2CD2AF8A006E4C46 /* UserProfile.swift in Sources */,
+				E930EDDF2DB563DF00E45AA2 /* CommentItem.swift in Sources */,
 				E930EDDD2DB5618B00E45AA2 /* PSImageView.swift in Sources */,
 				E947DBC22C72B10000E29837 /* TopNavigationPanel.swift in Sources */,
 				E964A2CE2D4EC8F500662BD5 /* Logger.swift in Sources */,
