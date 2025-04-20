@@ -14,8 +14,12 @@
 //  You should have received a copy of the GNU General Public License
 //  along with this program.  If not, see https://www.gnu.org/licenses/.
 
-import Foundation
+import SwiftUI
 
 class PostDetailViewModel: ObservableObject {
-    @Published var post: PostItemViewModel?
+    @ObservedObject var postItem: PostItemViewModel
+
+    init(postItem: PostItemViewModel) {
+        self.postItem = postItem
+    }
 }

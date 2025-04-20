@@ -17,28 +17,30 @@
 import SwiftUI
 
 struct PostDetailView: View {
-    @Binding var itemViweModel: PostItemViewModel
+    @Binding var viewModel: PostDetailViewModel
 
     var body: some View {
         VStack {
-            PostItem(viewModel: $itemViweModel)
+            PostItem(viewModel: $viewModel.postItem)
         }
     }
 }
 
 #Preview {
     PostDetailView(
-        itemViweModel: .constant(
-            PostItemViewModel(
-                userDisplayName: "retrocomputers",
-                username: "retrocomputers_",
-                userImageURL: "",
-                imageURL: "",
-                description: "This is an image description",
-                likesCount: 54,
-                commentsCount: 5,
-                sharesCount: 8,
-                isFavorite: false
+        viewModel: .constant(
+            PostDetailViewModel(
+                postItem: PostItemViewModel(
+                    userDisplayName: "retrocomputers",
+                    username: "retrocomputers_",
+                    userImageURL: "",
+                    imageURL: "",
+                    description: "This is an image description",
+                    likesCount: 54,
+                    commentsCount: 5,
+                    sharesCount: 8,
+                    isFavorite: false
+                )
             )
         )
     )
