@@ -35,11 +35,9 @@ struct SearchItemDefaultCell: View {
     }
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            Rectangle()
-                .fill(Color.blue)
+            PSImageView()
                 .frame(width: itemSize, height: itemSize)
-            Rectangle()
-                .fill(Color.blue)
+            PSImageView()
                 .frame(width: itemSize, height: itemSize)
         }
     }
@@ -53,15 +51,12 @@ struct SearchItemDoubleCell: View {
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
             VStack(spacing: 8) {
-                Rectangle()
-                    .fill(Color.blue)
+                PSImageView()
                     .frame(width: itemSize, height: itemSize)
-                Rectangle()
-                    .fill(Color.blue)
+                PSImageView()
                     .frame(width: itemSize, height: itemSize)
             }
-            Rectangle()
-                .fill(Color.blue)
+            PSImageView()
                 .frame(width: itemSize, height: itemSize * 2 + 8)
         }
     }
@@ -109,12 +104,10 @@ struct SearchView: View {
                     SearchLayout {
                         ForEach(0..<9) { item in
                             if item % 3 == 0 {
-                                Rectangle()
-                                    .fill(Color.blue)
+                                PSImageView()
                                     .frame(width: gridSize, height: gridSize * 2 + 8)
                             } else {
-                                Rectangle()
-                                    .fill(Color.blue)
+                                PSImageView()
                                     .frame(width: gridSize, height: gridSize)
                             }
                         }

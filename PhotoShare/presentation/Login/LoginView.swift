@@ -69,9 +69,7 @@ struct LoginView: View {
             }
             .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
             Spacer()
-            Rectangle()
-                .frame(height: 0.5)
-                .foregroundStyle(Color(UIColor.secondaryLabel))
+            PSSeparator()
             HStack {
                 Text("Don't have an account?")
                     .font(.subheadline)

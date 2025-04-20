@@ -31,17 +31,13 @@ struct PhotosGridView: View {
             ScrollView {
                 LazyVGrid(columns: columns, spacing: 20) {
                     ForEach(0..<4) { _ in
-                        Rectangle()
-                            .fill(Color.blue)
+                        PSImageView()
                             .frame(width: consideredWidth, height: consideredWidth)
-                        Rectangle()
-                            .fill(Color.blue)
+                        PSImageView()
                             .frame(width: consideredWidth, height: consideredWidth)
-                        Rectangle()
-                            .fill(Color.blue)
+                        PSImageView()
                             .frame(width: consideredWidth, height: consideredWidth)
-                        Rectangle()
-                            .fill(Color.blue)
+                        PSImageView()
                             .frame(width: consideredWidth, height: consideredWidth)
                     }
                 }

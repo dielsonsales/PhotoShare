@@ -23,8 +23,7 @@ struct ProfileView: View {
                 topBar
                 HStack(alignment: .center, spacing: 16) {
                     VStack(alignment: .center, spacing: 8) {
-                        Rectangle()
-                            .fill(Color.blue)
+                        PSImageView()
                             .frame(width: 60, height: 60)
                             .cornerRadius(30)
                         Text("Dielson Sales")

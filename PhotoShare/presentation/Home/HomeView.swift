@@ -53,9 +53,7 @@ struct HomeView: View {
                 }
             }
             .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
-            Rectangle()
-                .frame(height: 0.5)
-                .foregroundStyle(Color(UIColor.secondaryLabel))
+            PSSeparator()
         }
         .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
     }

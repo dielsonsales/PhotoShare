@@ -22,9 +22,7 @@ struct PostItem: View {
     var body: some View {
         VStack {
             HStack {
-                Rectangle()
-                    .fill(Color.blue)
-                    .background(Color.blue)
+                PSImageView()
                     .frame(width: 30, height: 30)
                     .cornerRadius(15)
                     .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 0))
@@ -41,8 +39,7 @@ struct PostItem: View {
             .frame(maxWidth: .infinity)
             .padding(EdgeInsets(top: 8, leading: 0, bottom: 0, trailing: 0))
             ZStack {
-                Rectangle()
-                    .fill(Color.blue)
+                PSImageView()
             }
             .frame(minWidth: nil, maxWidth: .infinity, minHeight: 400, maxHeight: 400)
             HStack(spacing: 10) {

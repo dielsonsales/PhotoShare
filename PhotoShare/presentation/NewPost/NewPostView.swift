@@ -24,7 +24,7 @@ struct NewPostView: View {
             let imageSize = reader.size.width <= 0 ? 0 : reader.size.width - 16 * 2
             VStack {
                 topBar
-                photoView
+                PSImageView()
                     .frame(
                         width: imageSize,
                         height: imageSize * 0.8
@@ -70,11 +70,6 @@ struct NewPostView: View {
             leftViews: leftButtons,
             rightViews: rightButtons
         )
-    }
-
-    var photoView: some View {
-        Rectangle()
-            .fill(Color.blue)
     }
 
     var managePhotosView: some View {

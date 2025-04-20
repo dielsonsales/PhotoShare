@@ -78,8 +78,7 @@ struct ReelsView: View {
                 Button(action: {
                     // TODO
                 }, label: {
-                    Rectangle()
-                        .fill(Color.yellow)
+                    PSImageView()
                         .cornerRadius(30)
                         .frame(width: 30, height: 30)
                 })
