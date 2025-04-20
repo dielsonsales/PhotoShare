@@ -60,8 +60,8 @@ struct HomeView: View {
 //                }
 //                .listStyle(.plain)
 //                .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
-                ScrollView {
-                    VStack(spacing: 0) {
+                ScrollView(.vertical, showsIndicators: false) {
+                    LazyVStack(spacing: 0) {
                         ForEach(viewModel.posts.indices, id: \.self) { index in
                             NavigationLink(
                                 destination: PostDetailView(
