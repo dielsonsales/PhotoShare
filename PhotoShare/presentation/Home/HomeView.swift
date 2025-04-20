@@ -62,14 +62,12 @@ struct HomeView: View {
 //                .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
                 ScrollView(.vertical, showsIndicators: false) {
                     LazyVStack(spacing: 0) {
-                        ForEach(viewModel.posts.indices, id: \.self) { index in
-                            NavigationLink(
-                                destination: PostDetailView(
-                                    viewModel: PostDetailViewModel(postItem: viewModel.posts[index])
-                                )
-                            ) {
-                                PostItem(viewModel: viewModel.posts[index])
-                                    .foregroundStyle(.primary)
+                        ForEach(viewModel.posts, id: \.id) { postViewModel in
+                            let destination = PostDetailView(
+                                viewModel: PostDetailViewModel(postItem: postViewModel)
+                            )
+                            NavigationLink(destination: destination) {
+                                PostItem(viewModel: postViewModel)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
