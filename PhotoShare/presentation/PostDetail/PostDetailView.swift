@@ -29,6 +29,10 @@ struct PostDetailView: View {
                     }
                 }
             }
+            .scrollDismissesKeyboard(.immediately)
+            .onTapGesture {
+                dismissKeyboard()
+            }
             PSSeparator()
             HStack {
                 TextField("Escreva um comentário...", text: $viewModel.inputText)
