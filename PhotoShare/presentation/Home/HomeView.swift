@@ -19,7 +19,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
-    @State private var selectedItem: PostItemViewModel? = nil
+    @State private var selectedItem: PostItemViewModel?
 
     var body: some View {
         NavigationStack {
