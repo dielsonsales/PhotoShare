@@ -53,3 +53,14 @@ class PostItemViewModel: ObservableObject, Identifiable {
         self.isFavorite = isFavorite
     }
 }
+
+/// Used for `navigationDestination` at `HomeView`.
+extension PostItemViewModel: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    public static func == (lhs: PostItemViewModel, rhs: PostItemViewModel) -> Bool {
+        lhs.id == rhs.id
+    }
+}

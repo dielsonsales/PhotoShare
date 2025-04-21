@@ -19,6 +19,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
+    @State private var selectedItem: PostItemViewModel? = nil
 
     var body: some View {
         NavigationStack {
@@ -48,35 +49,22 @@ struct HomeView: View {
                     ]
                 )
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-//                List(viewModel.posts, id: \.id) { postItemViewModel in
-//                    NavigationLink(
-//                        destination: PostDetailView(
-//                            viewModel: PostDetailViewModel(postItem: postItemViewModel)
-//                        )
-//                    ) {
-//                        PostItem(viewModel: postItemViewModel)
-//                            .listRowSeparator(.hidden)
-//                    }
-//                }
-//                .listStyle(.plain)
-//                .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
-                ScrollView(.vertical, showsIndicators: false) {
-                    LazyVStack(spacing: 0) {
-                        ForEach(viewModel.posts, id: \.id) { postViewModel in
-                            let destination = PostDetailView(
-                                viewModel: PostDetailViewModel(postItem: postViewModel)
-                            )
-                            NavigationLink(destination: destination) {
-                                PostItem(viewModel: postViewModel)
-                            }
-                            .buttonStyle(PlainButtonStyle())
-                        }
+                List(viewModel.posts, id: \.id) { postItemViewModel in
+                    PostItem(viewModel: postItemViewModel) {
+                        selectedItem = postItemViewModel
                     }
+                    .listRowSeparator(.hidden)
+                    .buttonStyle(PlainButtonStyle())
                 }
-                .padding(EdgeInsets(top: 0, leading: -8, bottom: -8, trailing: -8))
+                .listStyle(.plain)
+                .padding(EdgeInsets(top: 0, leading: -28, bottom: -8, trailing: -28))
+                .scrollIndicators(.hidden)
                 PSSeparator()
             }
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+            .navigationDestination(item: $selectedItem) { viewModel in
+                PostDetailView(viewModel: PostDetailViewModel(postItem: viewModel))
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ import SwiftUI
 
 struct PostItem: View {
     @ObservedObject var viewModel: PostItemViewModel
+    var onTap: (() -> Void)? = nil
 
     var body: some View {
         VStack {
@@ -45,6 +46,7 @@ struct PostItem: View {
             HStack(spacing: 10) {
                 Button(action: {
                     // TODO:
+                    print("Tapping on like")
                 }, label: {
                     HStack(spacing: 2) {
                         Image(systemName: "heart")
@@ -56,6 +58,7 @@ struct PostItem: View {
                 })
                 Button(action: {
                     // TODO:
+                    print("Tapping on comments")
                 }, label: {
                     HStack(spacing: 2) {
                         Image(systemName: "message")
@@ -67,6 +70,7 @@ struct PostItem: View {
                 })
                 Button(action: {
                     // TODO:
+                    print("Tapping on share")
                 }, label: {
                     HStack(spacing: 2) {
                         Image(systemName: "paperplane")
@@ -79,6 +83,7 @@ struct PostItem: View {
                 Spacer()
                 Button(action: {
                     // TODO:
+                    print("Tapping on favorite")
                 }, label: {
                     Image(systemName: "star")
                         .imageScale(.large)
@@ -89,5 +94,8 @@ struct PostItem: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
+        .onTapGesture {
+            onTap?()
+        }
     }
 }
