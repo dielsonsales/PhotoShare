@@ -17,12 +17,12 @@
 import SwiftUI
 
 class PostDetailViewModel: ObservableObject {
-    @ObservedObject var postItem: PostItemViewModel
+    @ObservedObject var postHeaderViewModel: PostHeaderViewModel
     @Published var inputText: String = ""
     @Published var comments: [CommentItemViewModel]
 
-    init(postItem: PostItemViewModel, comments: [CommentItemViewModel]? = nil) {
-        self.postItem = postItem
+    init(postHeaderViewModel: PostHeaderViewModel, comments: [CommentItemViewModel]? = nil) {
+        self.postHeaderViewModel = postHeaderViewModel
         if let comments {
             self.comments = comments
         } else {

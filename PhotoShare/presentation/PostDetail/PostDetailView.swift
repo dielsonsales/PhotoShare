@@ -22,7 +22,7 @@ struct PostDetailView: View {
     var body: some View {
         VStack {
             ScrollView(.vertical, showsIndicators: false) {
-                PostItemView(viewModel: viewModel.postItem)
+                PostHeaderView(viewModel: viewModel.postHeaderViewModel)
                 LazyVStack(alignment: .leading, spacing: 0) {
                     ForEach(viewModel.comments, id: \.id) { commentViewModel in
                         CommentItem(viewModel: commentViewModel)

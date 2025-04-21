@@ -17,7 +17,7 @@
 import Observation
 import SwiftUI
 
-class PostItemViewModel: ObservableObject, Identifiable {
+class PostHeaderViewModel: ObservableObject, Identifiable {
     // MARK: - Attributes
     let id = UUID()
     @Published var userDisplayName: String
@@ -55,12 +55,12 @@ class PostItemViewModel: ObservableObject, Identifiable {
 }
 
 /// Used for `navigationDestination` at `HomeView`.
-extension PostItemViewModel: Hashable {
+extension PostHeaderViewModel: Hashable {
     public func hash(into hasher: inout Hasher) {
         hasher.combine(id)
     }
 
-    public static func == (lhs: PostItemViewModel, rhs: PostItemViewModel) -> Bool {
+    public static func == (lhs: PostHeaderViewModel, rhs: PostHeaderViewModel) -> Bool {
         lhs.id == rhs.id
     }
 }

@@ -18,8 +18,8 @@
 
 import Foundation
 
-extension PostItemViewModel {
-    static let mock = PostItemViewModel(
+extension PostHeaderViewModel {
+    static let mock = PostHeaderViewModel(
         userDisplayName: "retrocomputers",
         username: "retrocomputers_",
         userImageURL: "",

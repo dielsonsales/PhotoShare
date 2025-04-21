@@ -16,8 +16,8 @@
 
 import SwiftUI
 
-struct PostItemView: View {
-    @ObservedObject var viewModel: PostItemViewModel
+struct PostHeaderView: View {
+    @ObservedObject var viewModel: PostHeaderViewModel
     var onTap: (() -> Void)? = nil
 
     var body: some View {

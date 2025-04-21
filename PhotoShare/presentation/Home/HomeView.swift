@@ -19,7 +19,7 @@ import SwiftUI
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewModel()
-    @State private var selectedItem: PostItemViewModel?
+    @State private var selectedItem: PostHeaderViewModel?
 
     var body: some View {
         NavigationStack {
@@ -50,7 +50,7 @@ struct HomeView: View {
                 )
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                 List(viewModel.posts, id: \.id) { postItemViewModel in
-                    PostItemView(viewModel: postItemViewModel) {
+                    PostHeaderView(viewModel: postItemViewModel) {
                         selectedItem = postItemViewModel
                     }
                     .listRowSeparator(.hidden)
@@ -62,8 +62,10 @@ struct HomeView: View {
                 PSSeparator()
             }
             .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
-            .navigationDestination(item: $selectedItem) { viewModel in
-                PostDetailView(viewModel: PostDetailViewModel(postItem: viewModel))
+            .navigationDestination(item: $selectedItem) { postHeaderViewModel in
+                PostDetailView(
+                    viewModel: PostDetailViewModel(postHeaderViewModel: postHeaderViewModel)
+                )
             }
         }
     }

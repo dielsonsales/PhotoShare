@@ -19,7 +19,7 @@
 import Foundation
 
 extension PostDetailViewModel {
-    static let mock = PostDetailViewModel(postItem: PostItemViewModel.mock)
+    static let mock = PostDetailViewModel(postHeaderViewModel: PostHeaderViewModel.mock)
 }
 
 #endif
