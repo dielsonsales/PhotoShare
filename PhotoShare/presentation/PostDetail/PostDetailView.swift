@@ -53,18 +53,6 @@ struct PostDetailView: View {
 
 #Preview {
     PostDetailView(
-        viewModel: PostDetailViewModel(
-            postItem: PostItemViewModel(
-                userDisplayName: "retrocomputers",
-                username: "retrocomputers_",
-                userImageURL: "",
-                imageURL: "",
-                description: "This is an image description",
-                likesCount: 54,
-                commentsCount: 5,
-                sharesCount: 8,
-                isFavorite: false
-            )
-        )
+        viewModel: PostDetailViewModel.mock
     )
 }
