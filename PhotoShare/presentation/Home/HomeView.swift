@@ -50,7 +50,7 @@ struct HomeView: View {
                 )
                 .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
                 List(viewModel.posts, id: \.id) { postItemViewModel in
-                    PostItem(viewModel: postItemViewModel) {
+                    PostItemView(viewModel: postItemViewModel) {
                         selectedItem = postItemViewModel
                     }
                     .listRowSeparator(.hidden)

@@ -16,7 +16,7 @@
 
 import SwiftUI
 
-struct PostItem: View {
+struct PostItemView: View {
     @ObservedObject var viewModel: PostItemViewModel
     var onTap: (() -> Void)? = nil
 
