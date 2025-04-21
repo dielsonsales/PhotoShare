@@ -21,6 +21,7 @@
 		E930EDE62DB69F6900E45AA2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDE52DB69F6600E45AA2 /* View.swift */; };
 		E930EDED2DB6E54400E45AA2 /* PostDetailViewModel+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDEC2DB6E53800E45AA2 /* PostDetailViewModel+mock.swift */; };
 		E930EDEF2DB6E58600E45AA2 /* PostHeaderViewModel+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDEE2DB6E58100E45AA2 /* PostHeaderViewModel+mock.swift */; };
+		E930EDF82DB6F10400E45AA2 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDF72DB6F10100E45AA2 /* AppInfo.swift */; };
 		E938750C2C796AB20001C3E7 /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938750B2C796AB20001C3E7 /* ReelsView.swift */; };
 		E94231AC2C4DEDBF00C6E876 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94231AB2C4DEDBF00C6E876 /* SearchView.swift */; };
 		E947DBC22C72B10000E29837 /* TopNavigationPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E947DBC12C72B10000E29837 /* TopNavigationPanel.swift */; };
@@ -544,6 +545,7 @@
 				E91EB88B2C4FEC360020E3D2 /* SearchLayout.swift in Sources */,
 				E9C0A6EE2CD2AF8A006E4C46 /* UserProfile.swift in Sources */,
 				E930EDDF2DB563DF00E45AA2 /* CommentItem.swift in Sources */,
+				E930EDF82DB6F10400E45AA2 /* AppInfo.swift in Sources */,
 				E930EDDD2DB5618B00E45AA2 /* PSImageView.swift in Sources */,
 				E947DBC22C72B10000E29837 /* TopNavigationPanel.swift in Sources */,
 				E964A2CE2D4EC8F500662BD5 /* Logger.swift in Sources */,
@@ -722,6 +724,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoShare/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Photo Share";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -750,6 +753,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PhotoShare/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Photo Share";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

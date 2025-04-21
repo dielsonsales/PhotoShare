@@ -25,7 +25,7 @@ struct HomeView: View {
         NavigationStack {
             VStack(spacing: 8) {
                 TopNavigationPanel(
-                    title: .simpleText(text: "Photo Share", contrast: .onLight),
+                    title: .simpleText(text: AppInfo.name, contrast: .onLight),
                     leftViews: [],
                     rightViews: [
                         AnyView(
