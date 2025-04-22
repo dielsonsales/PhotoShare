@@ -35,7 +35,7 @@ struct PostDetailView: View {
             }
             PSSeparator()
             HStack {
-                TextField("Escreva um comentário...", text: $viewModel.inputText)
+                TextField("PostDetailView.inputPlaceholder", text: $viewModel.inputText)
                     .submitLabel(.send)
                     .padding()
                     .background(Color(UIColor.secondarySystemBackground))

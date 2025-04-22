@@ -23,33 +23,33 @@ struct RootView: View {
         TabView(selection: $selectedTab) {
             HomeView()
                 .tabItem {
-                    Image(systemName: "house")
+                    PSIconHolder(icon: .home)
                 }
                 .tag(0)
             SearchView()
                 .tabItem {
-                    Image(systemName: "text.magnifyingglass.rtl")
+                    PSIconHolder(icon: .search)
                 }
                 .tag(1)
             Text("New Post")
                 .tabItem {
-                    Image(systemName: "plus.app.fill")
+                    PSIconHolder(icon: .addNew)
                 }
                 .onTapGesture {
                     presentNewPostScreen = true
                 }
                 .tag(2)
             .tabItem {
-                Image(systemName: "plus.app.fill")
+                PSIconHolder(icon: .addNew)
             }
             ReelsView()
                 .tabItem {
-                    Image(systemName: "movieclapper")
+                    PSIconHolder(icon: .reels)
                 }
                 .tag(3)
             ProfileView()
                 .tabItem {
-                    Image(systemName: "person.crop.circle")
+                    PSIconHolder(icon: .profile)
                 }
                 .tag(4)
         }

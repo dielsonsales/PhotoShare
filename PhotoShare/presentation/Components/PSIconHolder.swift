@@ -1,0 +1,37 @@
+//  PhotoShare
+//  Copyright (C) 2025  Dielson Sales de Carvalho.
+//
+//  This program is free software: you can redistribute it and/or modify
+//  it under the terms of the GNU General Public License as published by
+//  the Free Software Foundation, either version 3 of the License, or
+//  (at your option) any later version.
+//
+//  This program is distributed in the hope that it will be useful,
+//  but WITHOUT ANY WARRANTY; without even the implied warranty of
+//  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//  GNU General Public License for more details.
+//
+//  You should have received a copy of the GNU General Public License
+//  along with this program.  If not, see https://www.gnu.org/licenses/.
+
+import SwiftUI
+
+enum PSIcon: String {
+    case addNew = "plus.app.fill"
+    case home = "house"
+    case profile = "person.crop.circle"
+    case reels = "movieclapper"
+    case search = "text.magnifyingglass.rtl"
+    case search2 = "magnifyingglass"
+}
+
+struct PSIconHolder: View {
+    private let iconSystemName: String
+    var body: some View {
+        Image(systemName: iconSystemName)
+    }
+
+    init(icon: PSIcon) {
+        iconSystemName = icon.rawValue
+    }
+}

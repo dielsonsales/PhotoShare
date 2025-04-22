@@ -93,8 +93,8 @@ struct SearchView: View {
             let gridSize = (geometry.size.width - 4 * 8) / 3
             VStack {
                 HStack(alignment: .center) {
-                    Image(systemName: "magnifyingglass")
-                    TextField("Search", text: $viewModel.searchText)
+                    PSIconHolder(icon: .search2)
+                    TextField("SearchView.searchInputPlaceholder", text: $viewModel.searchText)
                 }
                 .padding(EdgeInsets(top: 10, leading: 10, bottom: 10, trailing: 10))
                 .background(Color(UIColor.secondarySystemBackground))
