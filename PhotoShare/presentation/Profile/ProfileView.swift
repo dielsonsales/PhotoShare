@@ -74,7 +74,7 @@ struct ProfileView: View {
     var topBar: some View {
         let leftView = AnyView(
             HStack(spacing: 8) {
-                Image(systemName: "lock")
+                PSIconHolder(icon: .private)
                 Text("d.scar.valho")
                     .font(.title2)
             }
@@ -84,8 +84,7 @@ struct ProfileView: View {
                 Button(action: {
                     // TODO:
                 }, label: {
-                    Image(systemName: "plus.app")
-                        .imageScale(.large)
+                    PSIconHolder(icon: .addNewContent, scale: .large)
                 })
                 .foregroundStyle(.black)
             ),
@@ -93,8 +92,7 @@ struct ProfileView: View {
                 Button(action: {
                     // TODO:
                 }, label: {
-                    Image(systemName: "line.3.horizontal")
-                        .imageScale(.large)
+                    PSIconHolder(icon: .menu, scale: .large)
                 })
                 .foregroundStyle(.black)
             )
@@ -123,8 +121,7 @@ struct ProfileView: View {
             Button(action: {
                 // TODO:
             }, label: {
-                Image(systemName: "person.badge.plus")
-                    .imageScale(.medium)
+                PSIconHolder(icon: .addFriends)
                     .padding(EdgeInsets(top: 0, leading: 8, bottom: 0, trailing: 8))
             })
             .frame(maxHeight: .infinity)

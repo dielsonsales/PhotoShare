@@ -32,8 +32,7 @@ struct HomeView: View {
                             Button(action: {
                                 // TODO:
                             }, label: {
-                                Image(systemName: "heart")
-                                    .imageScale(.large)
+                                PSIconHolder(icon: .like, scale: .large)
                             })
                             .foregroundStyle(.black)
                         ),
@@ -41,8 +40,7 @@ struct HomeView: View {
                             Button(action: {
                                 // TODO:
                             }, label: {
-                                Image(systemName: "ellipses.bubble")
-                                    .imageScale(.large)
+                                PSIconHolder(icon: .chats, scale: .large)
                             })
                             .foregroundStyle(.black)
                         )

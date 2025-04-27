@@ -48,8 +48,7 @@ struct NewPostView: View {
                     Button(action: {
                         presentScreen = false
                     }, label: {
-                        Image(systemName: "xmark")
-                            .imageScale(.large)
+                        PSIconHolder(icon: .close, scale: .large)
                     })
                     .foregroundStyle(.white)
                 })

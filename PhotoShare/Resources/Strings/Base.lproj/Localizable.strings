@@ -1,0 +1,5 @@
+// MARK: - PostDetailView
+"PostDetailView.inputPlaceholder" = "Escreva um comentário...";
+
+// MARK: - SearchView
+"SearchView.searchInputPlaceholder" = "Search";

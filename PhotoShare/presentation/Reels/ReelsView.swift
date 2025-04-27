@@ -135,7 +135,7 @@ struct ReelsView: View {
                 Button(action: {
                     // TODO:
                 }, label: {
-                    Image(systemName: "heart")
+                    PSIconHolder(icon: .like)
                         .imageScale(.large)
                 })
                 Button(action: {
@@ -149,7 +149,7 @@ struct ReelsView: View {
                 // TODO:
             }, label: {
                 VStack(spacing: 5) {
-                    Image(systemName: "message")
+                    PSIconHolder(icon: .comments)
                         .imageScale(.large)
                     Text("1.025")
                         .font(.subheadline)

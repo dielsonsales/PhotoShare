@@ -34,7 +34,7 @@ struct PostHeaderView: View {
                         .font(.caption)
                 }
                 Spacer()
-                Image(systemName: "ellipsis")
+                PSIconHolder(icon: .seeMore)
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 8))
             }
             .frame(maxWidth: .infinity)
@@ -49,8 +49,7 @@ struct PostHeaderView: View {
                     print("Tapping on like")
                 }, label: {
                     HStack(spacing: 2) {
-                        Image(systemName: "heart")
-                            .imageScale(.large)
+                        PSIconHolder(icon: .like, scale: .large)
                             .foregroundStyle(.black)
                         Text(String(54))
                             .foregroundStyle(.black)
@@ -61,8 +60,7 @@ struct PostHeaderView: View {
                     print("Tapping on comments")
                 }, label: {
                     HStack(spacing: 2) {
-                        Image(systemName: "message")
-                            .imageScale(.large)
+                        PSIconHolder(icon: .comments, scale: .large)
                             .foregroundStyle(.black)
                         Text(String(viewModel.commentsCount))
                             .foregroundStyle(.black)
@@ -73,8 +71,7 @@ struct PostHeaderView: View {
                     print("Tapping on share")
                 }, label: {
                     HStack(spacing: 2) {
-                        Image(systemName: "paperplane")
-                            .imageScale(.large)
+                        PSIconHolder(icon: .share, scale: .large)
                             .foregroundStyle(.black)
                         Text(String(viewModel.sharesCount))
                             .foregroundStyle(.black)
@@ -85,8 +82,7 @@ struct PostHeaderView: View {
                     // TODO:
                     print("Tapping on favorite")
                 }, label: {
-                    Image(systemName: "star")
-                        .imageScale(.large)
+                    PSIconHolder(icon: .favorite, scale: .large)
                         .foregroundStyle(.black)
                 })
             }

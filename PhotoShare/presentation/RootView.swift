@@ -33,14 +33,14 @@ struct RootView: View {
                 .tag(1)
             Text("New Post")
                 .tabItem {
-                    PSIconHolder(icon: .addNew)
+                    PSIconHolder(icon: .tabAddNew)
                 }
                 .onTapGesture {
                     presentNewPostScreen = true
                 }
                 .tag(2)
             .tabItem {
-                PSIconHolder(icon: .addNew)
+                PSIconHolder(icon: .tabAddNew)
             }
             ReelsView()
                 .tabItem {

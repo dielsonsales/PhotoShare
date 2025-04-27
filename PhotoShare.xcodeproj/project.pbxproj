@@ -21,6 +21,7 @@
 		E930EDE62DB69F6900E45AA2 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDE52DB69F6600E45AA2 /* View.swift */; };
 		E930EDED2DB6E54400E45AA2 /* PostDetailViewModel+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDEC2DB6E53800E45AA2 /* PostDetailViewModel+mock.swift */; };
 		E930EDEF2DB6E58600E45AA2 /* PostHeaderViewModel+mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDEE2DB6E58100E45AA2 /* PostHeaderViewModel+mock.swift */; };
+		E930EDF62DB6EE2B00E45AA2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E930EDF52DB6EE2B00E45AA2 /* Localizable.strings */; };
 		E930EDF82DB6F10400E45AA2 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDF72DB6F10100E45AA2 /* AppInfo.swift */; };
 		E930EDFA2DB7168100E45AA2 /* PSIconHolder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E930EDF92DB7167D00E45AA2 /* PSIconHolder.swift */; };
 		E938750C2C796AB20001C3E7 /* ReelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E938750B2C796AB20001C3E7 /* ReelsView.swift */; };
@@ -86,6 +87,7 @@
 		E930EDE52DB69F6600E45AA2 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		E930EDEC2DB6E53800E45AA2 /* PostDetailViewModel+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDetailViewModel+mock.swift"; sourceTree = "<group>"; };
 		E930EDEE2DB6E58100E45AA2 /* PostHeaderViewModel+mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostHeaderViewModel+mock.swift"; sourceTree = "<group>"; };
+		E930EDF42DB6EE2B00E45AA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E930EDF72DB6F10100E45AA2 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
 		E930EDF92DB7167D00E45AA2 /* PSIconHolder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIconHolder.swift; sourceTree = "<group>"; };
 		E938750B2C796AB20001C3E7 /* ReelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelsView.swift; sourceTree = "<group>"; };
@@ -211,6 +213,23 @@
 			path = mock;
 			sourceTree = "<group>";
 		};
+		E930EDF02DB6EDF500E45AA2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E930EDF72DB6F10100E45AA2 /* AppInfo.swift */,
+				E930EDF12DB6EDFF00E45AA2 /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E930EDF12DB6EDFF00E45AA2 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				E930EDF52DB6EE2B00E45AA2 /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 		E93244942C4EC6D400FA6484 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -329,6 +348,7 @@
 		E9FB0B382C4C2DDC007FA4DD /* PhotoShare */ = {
 			isa = PBXGroup;
 			children = (
+				E930EDF02DB6EDF500E45AA2 /* Resources */,
 				E9C0A6F12CD31875006E4C46 /* ParseConfig.plist */,
 				E99FB4392CBB454000B0CF35 /* AppDelegate.swift */,
 				E9FB0B392C4C2DDC007FA4DD /* PhotoShareApp.swift */,
@@ -476,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9C0A6F22CD3187D006E4C46 /* ParseConfig.plist in Resources */,
+				E930EDF62DB6EE2B00E45AA2 /* Localizable.strings in Resources */,
 				E9FB0B432C4C2DDD007FA4DD /* Preview Assets.xcassets in Resources */,
 				E9FB0B402C4C2DDD007FA4DD /* Assets.xcassets in Resources */,
 			);
@@ -596,6 +617,17 @@
 			targetProxy = E9FB0B532C4C2DDD007FA4DD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E930EDF52DB6EE2B00E45AA2 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E930EDF42DB6EE2B00E45AA2 /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		E9FB0B5A2C4C2DDD007FA4DD /* Debug */ = {
