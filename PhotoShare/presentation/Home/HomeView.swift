@@ -22,6 +22,14 @@ struct HomeView: View {
     @State private var selectedItem: PostHeaderViewModel?
 
     var body: some View {
+        if viewModel.isLoading {
+            ProgressView()
+        } else {
+            loadedBody
+        }
+    }
+
+    var loadedBody: some View {
         NavigationStack {
             VStack(spacing: 8) {
                 TopNavigationPanel(

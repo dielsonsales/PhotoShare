@@ -18,6 +18,9 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
     @Published var posts = [PostHeaderViewModel]()
+    @Published var isLoading = true
+
+    private var loadTask: Task<Void, Never>?
 
     init() {
         posts = [
@@ -55,5 +58,18 @@ class HomeViewModel: ObservableObject {
                 isFavorite: false
             )
         ]
+        loadTask = Task {
+            try? await Task.sleep(nanoseconds: 2_000_000_000) // 2 seconds
+            guard !Task.isCancelled else {
+                return
+            }
+            await MainActor.run {
+                self.isLoading = false
+            }
+        }
+    }
+
+    deinit {
+        loadTask?.cancel()
     }
 }
