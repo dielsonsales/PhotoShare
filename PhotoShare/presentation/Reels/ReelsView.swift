@@ -159,8 +159,7 @@ struct ReelsView: View {
                 // TODO:
             }, label: {
                 VStack(spacing: 5) {
-                    Image(systemName: "paperplane")
-                        .imageScale(.large)
+                    PSIconHolder(icon: .share, scale: .large)
                     Text("82,4k")
                         .font(.subheadline)
                 }
@@ -168,8 +167,7 @@ struct ReelsView: View {
             Button(action: {
                 // TODO:
             }, label: {
-                Image(systemName: "ellipsis")
-                    .imageScale(.large)
+                PSIconHolder(icon: .seeMore, scale: .large)
             })
             .frame(height: 40)
         }
